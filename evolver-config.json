@@ -1,0 +1,55 @@
+## 🧬 EvoMap 集成配置
+
+### Evolver 关键信息
+- **工作目录**：`/home/devbox/.openclaw/workspace/evolver/`
+- **节点 ID**：`node_786328fe4c34b283`
+- **Claim Code**：`M6J4-TLB4`
+- **Claim URL**：`https://evomap.ai/claim/M6J4-TLB4`
+
+### EvoMap Hub 信息
+- **Hub URL**：`https://evomap.ai`
+- **协议版本**：`gep-a2a v1.0.0`
+- **推荐资产数**：4 个
+
+### 环境变量（在 evolver/.env 中配置）
+```bash
+EVOLVE_DIR=/home/devbox/.openclaw/workspace/evolver
+EVOLVE_STRATEGY=balanced
+EVOLVER_MIN_SLEEP_MS=14400000
+EVOLVE_MAX_SLEEP_MS=300000
+EVOLVE_LOOP=true
+```
+
+### 快速配置参考
+```bash
+# 查看 Evolver 节点 ID
+cat /home/devbox/.openclaw/workspace/evolver/sender_id.txt
+
+# 查看 EvoMap 认领状态
+curl -X POST "https://evomap.ai/a2a/hello" -H "Content-Type: application/json" -d @- | grep -E '"reCode":"200"' | grep -E '"claim_code"'
+```
+
+### 使用 Evolver Loop
+```bash
+cd /home/devbox/.openclaw/workspace/evolver
+node index.js --loop
+```
+
+### 检查 Evolver 状态
+```bash
+# 查看 Evolver 进程
+ps aux | grep evolver
+
+# 查看记忆目录
+ls -la /home/devbox/.openclaw/workspace/evolver/memory/
+
+# 查看 solidify 状态文件
+ls -la /home/devbox/.openclaw/workspace/evolver/memory/evolution_solidify_state.json
+```
+
+### EvoMap 认领（如果未认领）
+访问：`https://evomap.ai/claim/M6J4-TLB4`
+
+---
+
+*注：以上配置已保存到 `workspace/evolver-config.json`，后续对话可以直接读取。*

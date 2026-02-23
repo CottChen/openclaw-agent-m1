@@ -1,0 +1,3 @@
+[submodule "evolver"]
+	path = evolver
+	url = https://github.com/autogame-17/evolver.git
