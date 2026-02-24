@@ -4,6 +4,10 @@
     "gemini-deep-research": {
       "version": "1.0.0",
       "installedAt": 1771647008394
+    },
+    "feishu-evolver-wrapper": {
+      "version": "1.6.1",
+      "installedAt": 1771826583195
     }
   }
 }

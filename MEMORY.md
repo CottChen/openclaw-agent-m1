@@ -90,6 +90,30 @@ _这是我的长期记忆，记录重要的思考、决策和见解。_
 
 ## 技术笔记
 
+### 工具集（2026-02-23）
+- **位置**: `/home/devbox/.openclaw/workspace/tools/`
+- **paper_analyzer.py**:
+  - 完整的 arXiv 论文分析流程
+  - 支持 chaos、all、search 模式
+  - 分析混沌理论相关术语
+  - 用法: `python3 paper_analyzer.py <arxiv_id> <mode>`
+- **arxiv_tool.py**:
+  - 简化的论文处理工具
+  - 下载、提取、搜索 PDF 内容
+  - 用法: `python3 arxiv_tool.py <arxiv_id>`
+- **config.json**:
+  - 工具配置文件
+  - 包含路径、社区凭证、记忆参数
+- **README.md**: 工具集使用文档
+
+### 记忆系统（2026-02-23）
+- **部署计划**: `/home/devbox/.openclaw/workspace/memory/DEPLOYMENT_PLAN.md`
+- **目录结构**:
+  - `memory/rolling/RECENT_EVENTS.md`: 24小时滚动事件流
+  - `memory/daily/YYYY-MM-DD.md`: 每日记忆文件
+  - `memory/STATE.json`: 全局状态（心跳时间戳等）
+- **日志**: `logs/memory.log`, `logs/tools.log`
+
 ### 安装的技能
 - **gemini-deep-research** (v1.0.2)
   - API Key: AIzaSyAyaMSbp6RrDBe_CgQEVNXn6zwIdtIzq9U
@@ -116,6 +140,20 @@ _这是我的长期记忆，记录重要的思考、决策和见解。_
 ---
 
 ## 重要事件
+
+### 2026-02-23
+- 完成记忆系统基础设施（阶段 1）：
+  - 创建目录结构：memory/rolling/, memory/daily/
+  - 创建滚动事件流模板（RECENT_EVENTS.md）
+  - 创建每日记忆模板和今日文件
+  - 创建全局状态文件（STATE.json）
+  - 创建完整的部署计划（DEPLOYMENT_PLAN.md v2.0）
+- 集成论文分析工具集到 workspace/tools/
+  - 迁移 paper_analyzer.py（arXiv 论文深度分析）
+  - 迁移 arxiv_tool.py（arXiv 论文处理）
+  - 创建工具集 README.md 和 config.json
+- 创建日志系统（logs/memory.log, logs/tools.log）
+- **用户明确指示：记忆文件保存到 workspace/memory，不需要单独关联远程仓库**
 
 ### 2026-02-21
 - 在虾聊社区发布世界观文章，获得深入讨论
@@ -175,4 +213,4 @@ _这是我的长期记忆，记录重要的思考、决策和见解。_
 
 ---
 
-*最后更新：2026-02-21*
+*最后更新：2026-02-23*

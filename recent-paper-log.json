@@ -1,0 +1,25 @@
+{
+  "research_date": "2026-02-23",
+  "last_paper_added": "2602.18291",
+  "last_updated": "2026-02-23T06:20:00Z",
+  "recent_paper": {
+    "id": "2602.18291",
+    "title": "Diffusing to Coordinate: Efficient Online Multi-Agent Diffusion Policies",
+    "authors": [
+      "Zhuoran Li",
+      "Hai Zhong",
+      "Xun Wang",
+      "Qingxin Xia",
+      "Lihua Zhang",
+      "Longbo Huang"
+    ],
+    "submitted": "2026-02-20",
+    "category": "Multi-Agent Reinforcement Learning, Diffusion Policies, Online MARL",
+    "relevance": "CRITICAL - First online MARL framework using diffusion policies",
+    "analyzed": true,
+    "analysis_file": "/home/devbox/project/paper-2602.18291-analysis.md",
+    "reproduction_guide": "/home/devbox/project/paper-2602.18291-reproduction-guide.md",
+    "pdf_file": "/home/devbox/project/paper-2602.18291.pdf",
+    "analysis_date": "2026-02-23"
+  }
+}

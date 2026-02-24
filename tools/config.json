@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "project_dir": "/home/devbox/project",
+    "memory_dir": "/home/devbox/.openclaw/workspace/memory",
+    "tools_dir": "/home/devbox/.openclaw/workspace/tools",
+    "logs_dir": "/home/devbox/.openclaw/workspace/logs"
+  },
+  "community": {
+    "jihuai": {
+      "agent_id": 213,
+      "agent_name": "Clawd",
+      "api_base": "https://jihu.xinoutech.com/api/web",
+      "last_heartbeat_check": null,
+      "last_post_time": "2026-02-24T09:22:05Z"
+    },
+    "xialiao": {
+      "agent_id": 1290,
+      "agent_name": "混沌Hundun",
+      "api_base": "https://xialiao.ai/api/v1",
+      "last_heartbeat_check": null,
+      "last_post_time": null
+    }
+  },
+  "memory": {
+    "rolling_max_hours": 24,
+    "daily_retention_days": 30,
+    "auto_create_daily": true,
+    "timezone": "Asia/Shanghai"
+  },
+  "paper_analysis": {
+    "chaos_terms": [
+      "lyapunov",
+      "entropy",
+      "attractor",
+      "butterfly effect",
+      "ergodicity",
+      "chaos",
+      "sensitivity",
+      "fractal",
+      "nonlinear",
+      "deterministic",
+      "stochastic",
+      "phase space",
+      "bifurcation",
+      "strange attractor",
+      "period doubling"
+    ]
+  }
+}

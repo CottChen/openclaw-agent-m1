@@ -1,0 +1,157 @@
+{
+  "task": "每30分钟从arXiv学习一篇论文",
+  "learning_topics": [
+    "混沌理论",
+    "熵脑理论",
+    "香农熵理论",
+    "控制论"
+  ],
+  "application_areas": [
+    "大模型训练框架",
+    "大模型推理框架",
+    "Agent框架"
+  ],
+  "learned_papers": [
+    {
+      "arxiv_id": "2602.17832",
+      "title": "MePoly: Max Entropy Polynomial Policy Optimization",
+      "learned_at": "2026-02-23T04:30:00Z",
+      "topics": [
+        "香农熵理论",
+        "最大熵强化学习",
+        "能量模型"
+      ],
+      "application_areas": [
+        "强化学习",
+        "Agent框架"
+      ],
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.17832_MePoly_学习报告.md",
+      "reproduction_plan": "5阶段：环境搭建、算法理解、基线对比、超参数分析、Agent集成"
+    },
+    {
+      "arxiv_id": "2602.15763",
+      "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+      "learned_at": "2026-02-23T05:30:00Z",
+      "topics": [
+        "控制论",
+        "异步强化学习",
+        "MoE架构",
+        "Agent工程化"
+      ],
+      "application_areas": [
+        "大模型训练框架",
+        "大模型推理框架",
+        "Agent框架"
+      ],
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.15763_GLM-5_学习报告.md",
+      "reproduction_plan": "5阶段：环境搭建、架构理解、基准测试、异步RL研究、Agent工程化应用"
+    },
+    {
+      "arxiv_id": "2602.18435",
+      "title": "Assigning Confidence: K-partition Ensembles",
+      "authors": "Aggelos Semoglou; John Pavlopoulos",
+      "submitted_date": "2026-02-20",
+      "learned_at": "2026-02-23T14:19:00Z",
+      "topics": [
+        "clustering",
+        "ensemble",
+        "confidence",
+        "stability",
+        "geometric fit"
+      ],
+      "application_areas": [
+        "机器学习",
+        "聚类算法",
+        "稳定性分析"
+      ]
+    },
+    {
+      "arxiv_id": "2602.18432",
+      "title": "SARAH: Spatially Aware Real-time Agentic Humans",
+      "authors": "Evan Ng; Siwei Zhang; Zhang Chen; Michael Zollhöfer; Alexander Richard",
+      "submitted_date": "2026-02-20",
+      "learned_at": "2026-02-23T18:50:00Z",
+      "topics": [
+        "spatial awareness",
+        "causal transformer",
+        "flow matching",
+        "real-time inference"
+      ],
+      "application_areas": [
+        "vr",
+        "telepresence",
+        "agent motion",
+        "multi-modal fusion"
+      ]
+    },
+    {
+      "arxiv_id": "2602.20132",
+      "title": "LAD: Learning Advantage Distribution for Reasoning",
+      "authors": "Wendi Li; Sharon Li",
+      "submitted_date": "2026-02-23",
+      "learned_at": "2026-02-24T03:41:00Z",
+      "topics": [
+        "f-divergence",
+        "分布匹配",
+        "熵坍缩",
+        "LLM推理",
+        "强化学习"
+      ],
+      "application_areas": [
+        "大模型推理框架",
+        "Agent框架",
+        "强化学习"
+      ],
+      "analysis_path": "/home/devbox/project/2602.20132_analysis.json",
+      "chaos_terms": [
+        "deterministic",
+        "entropy",
+        "nonlinear",
+        "sensitivity",
+        "stochastic"
+      ],
+      "reproduction_plan": "5阶段：理论理解、代码复现、实验验证、对比分析、应用拓展"
+    },
+    {
+      "arxiv_id": "2602.13789",
+      "title": "TEG: Exascale Cluster Governance via Non-Equilibrium Thermodynamics and Langevin Dynamics",
+      "authors": "Zhengyan Chu",
+      "submitted_date": "2026-02-17",
+      "learned_at": "2026-02-24T05:33:00Z",
+      "topics": [
+        "耗散结构",
+        "朗之万动力学",
+        "朗道相变",
+        "熵耗散",
+        "纳什均衡",
+        "控制屏障函数"
+      ],
+      "application_areas": [
+        "大模型训练框架",
+        "大模型推理框架",
+        "Agent框架",
+        "分布式系统"
+      ],
+      "chaos_terms": [
+        "chaos",
+        "entropy",
+        "deterministic",
+        "stochastic",
+        "nonlinear",
+        "lyapunov"
+      ],
+      "analysis_path": "/home/devbox/project/2602.13789_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.13789_TEG_学习报告.md",
+      "reproduction_plan": "5阶段：理论理解、最小实现原型、基线对比、超参数分析、Agent框架集成"
+    }
+  ],
+  "current_session": {
+    "start_time": "2026-02-23T04:15:00Z",
+    "papers_learned": 6
+  },
+  "schedule": {
+    "interval_minutes": 30,
+    "last_check": "2026-02-24T05:33:00Z"
+  },
+  "api_fix_note": "2026-02-24: 修复arXiv API问题，从http://改为https://export.arxiv.org/api/query"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "2602.15894",
+  "title": "Quality-constrained Entropy Maximization Policy Optimization for LLM Diversity",
+  "authors": [
+    "Haihui Pan",
+    "Yuzhong Hong",
+    "Shaoke Lv",
+    "Junwei Bao",
+    "Hongfei Jiang",
+    "Yang Song"
+  ],
+  "submitted": "2026-02-11",
+  "category": "Computation and Language (cs.CL); Machine Learning (cs.LG)",
+  "relevance": "CRITICAL - First theoretical and empirical analysis demonstrating that alignment tasks can be decomposed into quality and diversity components. Proposes QEMPO and QEMPO-KL frameworks to maximize output entropy while ensuring quality.",
+  "abstract_snippet": "Recent research indicates that while alignment methods significantly improve quality of large language model outputs, they simultaneously reduce diversity of models output. We propose Quality-constrained Entropy Maximization Policy Optimization (QEMPO). Experiments validate that QEMPO achieves performance comparable to or even better than RLHF while improving output diversity.",
+  "analyzed": true,
+  "analysis_file": "/home/devbox/project/paper-2602.15894-analysis.md",
+  "reproduction_guide": "/home/devbox/project/paper-2602.15894-reproduction-guide.md",
+  "pdf_file": "/home/devbox/project/2602.15894.pdf",
+  "analysis_date": "2026-02-24"
+}
