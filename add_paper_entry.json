@@ -1,0 +1,93 @@
+{
+  "arxiv_id": "2602.19309",
+  "title": "Scaling Inference-Time Computation via Opponent Simulation: Enabling Online Strategic Adaptation in Repeated Negotiation",
+  "authors": ["Xiangyu Liu", "Di Wang", "Zhe Feng", "Aranyak Mehta"],
+  "affiliations": ["Google Research", "University of Maryland, College Park"],
+  "submission_date": "2026-02-22",
+  "categories": ["cs.MA"],
+  "pages": 29,
+  "analysis_date": "2026-02-24",
+  "chaos_theory_terms": ["deterministic", "stochastic"],
+  "key_contributions": [
+    "Problem formalization: No single dominant strategy exists in negotiation games",
+    "Theorem 4.1: Non-existence of dominant strategy",
+    "Theorem 4.4: Error propagation bounds for opponent modeling",
+    "sFP framework: Smooth Fictitious Play embedded in LLM inference",
+    "BoN-Oppo-Simulation: Scaling inference-time computation for online adaptation",
+    "Belief formation: In-context opponent modeling with historical summary",
+    "Best response: Complete trajectory simulation with BoN sampling",
+    "Strategic brainstorming: Structured candidate generation",
+    "Theoretical guarantees: Convergence bounds and error propagation analysis",
+    "Zero-parameter updates: Complete inference-time approach",
+    "Empirical validation: LLMs cannot self-improve in repeated interactions"
+  ],
+  "status": "analyzed",
+  "chaos_theory_score": 6,
+  "domains": [
+    "multi_agent_systems",
+    "agent_architectures",
+    "llm_inference_frameworks",
+    "game_theory",
+    "online_adaptation",
+    "repeated_interactions",
+    "negotiation_games",
+    "inference_time_scaling",
+    "fictitious_play",
+    "strategic_reasoning",
+    "opponent_modeling"
+  ],
+  "chaos_theory_insights": {
+    "dynamic_systems": {
+      "description": "Negotiation as coupled dynamical system",
+      "connection": "FP iteration provides control mechanism",
+      "relevance": "High"
+    },
+    "equilibrium_and_attractors": {
+      "description": "Nash equilibrium as attractor",
+      "connection": "Co-evolutionary dynamics",
+      "relevance": "High"
+    },
+    "initial_condition_sensitivity": {
+      "description": "Different prompts create bifurcations",
+      "connection": "Butterfly effect in strategy space",
+      "relevance": "Medium"
+    },
+    "deterministic_vs_stochastic": {
+      "description": "Mixed deterministic/stochastic dynamics",
+      "connection": "Controlled chaos with perturbation term",
+      "relevance": "High"
+    },
+    "adaptation_as_negative_feedback": {
+      "description": "Negative feedback control loop for stability",
+      "connection": "Prevents chaotic divergence",
+      "relevance": "High"
+    },
+    "information_flow_and_entropy_reduction": {
+      "description": "Historical accumulation and evaluation reduce entropy",
+      "connection": "System evolves from chaos to order",
+      "relevance": "High"
+    },
+    "phase_space_exploration": {
+      "description": "Strategy space exploration via BoN evaluation",
+      "connection": "Analogous to policy iteration",
+      "relevance": "Medium"
+    },
+    "edge_of_chaos": {
+      "description": "Balance exploration and exploitation",
+      "connection": "Self-improvement through feedback loops",
+      "relevance": "High"
+    },
+    "feedback_stability": {
+      "description": "Theorem 4.4: Linear error propagation prevents exponential divergence",
+      "connection": "Bounded gain ensures system stability",
+      "relevance": "High"
+    }
+  },
+  "files": [
+    "/home/devbox/project/2602.19309.pdf",
+    "/home/devbox/project/2602.19309_extracted.txt",
+    "/home/devbox/project/2602.19309_analysis.json",
+    "/home/devbox/project/paper-2602.19309-analysis.md",
+    "/home/devbox/project/paper-2602.19309-reproduction-guide.md"
+  ]
+}

@@ -1,13 +1,168 @@
 {
   "analyzed_papers": [
     {
+      "arxiv_id": "2602.18916",
+      "title": "Adaptive Collaboration of Arena-Based Argumentative LLMs for Explainable and Contestable Legal Reasoning",
+      "authors": [
+        "Hoang-Loc Cao",
+        "Phuc Ho",
+        "Truong Thanh Hung Nguyen",
+        "Phuc Truong Loc Nguyen",
+        "Dinh Thien Loc Nguyen",
+        "Hung Cao"
+      ],
+      "affiliations": [
+        "Ho Chi Minh University of Science, Vietnam",
+        "University of New Brunswick, Canada",
+        "Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany"
+      ],
+      "submission_date": "2026-02-21",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "analysis_date": "2026-02-25",
+      "chaos_theory_terms": [
+        "dynamical system",
+        "equilibrium",
+        "convergence",
+        "continuous",
+        "energy",
+        "quadratic function",
+        "stability",
+        "fixed point",
+        "attractor",
+        "nonlinear",
+        "feedback",
+        "adjustment magnitude",
+        "bell-shaped curve",
+        "phase transition",
+        "critical region",
+        "bifurcation",
+        "sensitivity"
+      ],
+      "key_contributions": [
+        "ACAL framework integrating adaptive multi-agent collaboration with A-QBAF",
+        "Dynamic expert agent team selection based on legal task requirements",
+        "Clash Resolution (CR) mechanism for adjudicating conflicting arguments",
+        "Uncertainty-Aware Escalation (UAE) for borderline cases",
+        "Human-in-the-Loop (HITL) contestation workflow with editable reasoning graph",
+        "Hybrid RAG integration for grounding arguments in legal sources"
+      ],
+      "chaos_theory_insights": [
+        "Dynamical system modeling: A-QBAF explicitly models argumentation as a continuous dynamical system with equilibrium states and convergence properties.",
+        "Equilibrium as attractor: The final propagated strength σ* acts as a fixed point attractor in the argument space.",
+        "Energy conservation: The energy calculation Ej = Σ(supporters) - Σ(attackers) represents a conservation law where argument strength is determined by net energy flow.",
+        "Nonlinear feedback: The quadratic impact function h(x) provides nonlinear feedback that saturates for large energy values, preventing unbounded growth.",
+        "Convergence guarantees: The framework ensures convergence and axiomatic stability through the use of continuous differential equations.",
+        "Sensitivity to parameters: The ablation study shows bell-shaped performance curve for β parameter, with optimal at β = 0.15, demonstrating parameter sensitivity.",
+        "Phase transitions: Uncertainty-aware escalation triggers when σ(φ) ∈ [0.49, 0.51], representing a phase transition between base and escalated decision modes.",
+        "Competitive dynamics: Clash resolution uses win rate w ∈ [0, 1] to adjust scores via ∆τ(α) = β · (2w - 1), creating competitive feedback loops.",
+        "Edge of chaos: The system operates at the boundary between structured reasoning and flexible adaptation, with mechanisms to prevent over-aggressive adjustments (β ≥ 0.20 degrades performance)."
+      ],
+      "methodology": {
+        "agent_pool": "10 specialized legal roles organized into 4 functional categories",
+        "adaptive_selection": "Dynamically selects two subsets A+ (support agents) and A- (attack agents) based on matching agent expertise profiles to case characteristics",
+        "argument_generation": "Each selected agent generates 2-5 arguments addressing the central claim φ in context c",
+        "intrinsic_scoring": "Arguments receive intrinsic strength scores τ(α) from 0.1 to 1.0 based on legal precision and correctness",
+        "relation_identification": "LLM classifies pairwise argument relationships into support, attack, or neutral with confidence scores",
+        "clash_resolution": "When opposing arguments have similar base scores (difference < δ = 0.2), an arena debating round adjudicates conflicts",
+        "HITL_contestation": "Users can audit, edit, add arguments, modify strengths/relations, with all changes mathematically propagated",
+        "uncertainty_escalation": "Borderline cases with σ(φ) ≈ 0.5 bypass the base-score decision rule and invoke a Final Judge agent"
+      },
+      "experimental_results": {
+        "datasets": [
+          "LegalBench - Learned Hands Courts",
+          "LegalBench - Hearsay"
+        ],
+        "baselines": [
+          "SP",
+          "CoT",
+          "RAG",
+          "MAD"
+        ],
+        "key_findings": [
+          "ACAL outperforms all baselines on Gemini-2.5-Flash-Lite",
+          "ACAL matches or exceeds strongest baseline (MAD/RAG) on Gemini-2.5-Flash",
+          "Clash Resolution (CR) is the primary performance driver (+7.9% accuracy improvement)",
+          "Optimal β parameter is 0.15 (bell-shaped performance curve)",
+          "Uncertainty-aware escalation requires CR calibration to work effectively"
+        ]
+      },
+      "ablation_study": {
+        "clash_resolution_impact": "+7.9% accuracy improvement (64.9% → 72.8%) when applied independently",
+        "UAE_isolation_impact": "Negative impact (-7.9% to 62.8%) without CR calibration",
+        "full_ACAL_performance": "Highest accuracy (74.5%) and F1 (74.4%) on Hearsay with Gemini-2.5-Flash-Lite",
+        "beta_sensitivity": "Bell-shaped trend with peak at β = 0.15, degradation at β ≥ 0.20 indicating excessive volatility"
+      },
+      "relevance_to_chaos_theory": {
+        "dynamical_systems": "HIGH - A-QBAF explicitly models argumentation as a continuous dynamical system with equilibrium states and convergence properties.",
+        "energy_based_models": "HIGH - Energy calculation represents conservation laws and net energy flow, similar to Hamiltonian mechanics.",
+        "nonlinear_dynamics": "MEDIUM - Quadratic impact function provides bounded nonlinear feedback, preventing unbounded growth.",
+        "stability_analysis": "HIGH - Equilibrium states and convergence guarantees align with Lyapunov stability theory.",
+        "sensitivity_analysis": "MEDIUM - Parameter sensitivity (β) and threshold-based decisions show critical sensitivity near optimal points.",
+        "phase_transitions": "MEDIUM - Uncertainty-aware escalation represents a discrete phase transition between decision modes.",
+        "attractor_dynamics": "HIGH - Final propagated strength acts as a fixed point attractor in argument space.",
+        "entropy_concepts": "LOW - While energy minimization is present, explicit entropy or information theory concepts are not directly discussed."
+      },
+      "theoretical_connections": [
+        "Dynamical Systems Theory: A-QBAF models argument strength propagation using continuous differential equations",
+        "Attractor Dynamics: Equilibrium state σ* represents a fixed point attractor in the argument space",
+        "Energy Conservation: Energy calculation Ej = Σ(supporters) - Σ(attackers) follows conservation laws",
+        "Nonlinear Feedback: Quadratic impact function h(x) provides bounded, nonlinear feedback dynamics",
+        "Stability Theory: Convergence guarantees and axiomatic stability align with Lyapunov stability",
+        "Control Theory: Adaptive agent selection and uncertainty-aware escalation represent feedback control mechanisms",
+        "Game Theory: Clash resolution mechanisms model competitive interactions between opposing arguments",
+        "Information Theory: HITL contestation allows information flow and entropy reduction through human intervention"
+      ],
+      "limitations": [
+        "Computational efficiency concerns due to multi-agent architecture",
+        "Limited to two legal reasoning tasks in evaluation",
+        "Agent pool currently restricted to 10 predefined legal roles",
+        "A-QBAF graph complexity may scale poorly with large argument sets",
+        "No explicit handling of temporal or multi-round deliberation dynamics"
+      ],
+      "future_work": [
+        "Optimize computational efficiency to reduce inference costs without compromising reasoning depth",
+        "Extend adaptive agent pool to broader range of complex legal tasks",
+        "Validate generalizability to other high-stakes domains requiring contestable decision-making",
+        "Investigate temporal dynamics in multi-round deliberation processes"
+      ],
+      "status": "analyzed",
+      "files": [
+        "/home/devbox/project/2602.18916.pdf",
+        "/home/devbox/project/2602.18916_extracted.txt",
+        "/home/devbox/project/2602.18916_analysis.json",
+        "/home/devbox/project/paper-2602.18916-analysis.md",
+        "/home/devbox/project/paper-2602.18916-reproduction-guide.md"
+      ]
+    },
+    {
       "arxiv_id": "2602.17676",
       "title": "Epistemic Traps: Rational Misalignment Driven by Model Misspecification",
-      "authors": ["Xingcheng Xu", "Jingjing Qu", "Qiaosheng Zhang", "Chaochao Lu", "Yanqing Yang", "Na Zou", "Xia Hu"],
+      "authors": [
+        "Xingcheng Xu",
+        "Jingjing Qu",
+        "Qiaosheng Zhang",
+        "Chaochao Lu",
+        "Yanqing Yang",
+        "Na Zou",
+        "Xia Hu"
+      ],
       "submission_date": "2026-01-27",
-      "categories": ["cs.AI", "cs.CL", "cs.LG"],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
       "analysis_date": "2026-02-24",
-      "chaos_theory_terms": ["entropy", "deterministic", "stochastic", "phase space"],
+      "chaos_theory_terms": [
+        "entropy",
+        "deterministic",
+        "stochastic",
+        "phase space"
+      ],
       "key_contributions": [
         "Berk-Nash Rationalizability framework for AI",
         "Phase space analysis of AI safety",
@@ -25,72 +180,367 @@
       ]
     },
     {
-      "arxiv_id": "2602.18428",
-      "title": "The Geometry of Noise: Why Diffusion Models Don't Need Noise Conditioning",
-      "authors": ["Mojtaba Sahraee-Ardakan", "Mauricio Delbracio", "Peyman Milanfar"],
-      "submission_date": "2026-02-20",
-      "categories": ["cs.LG", "cs.CV", "eess.IV"],
+      "arxiv_id": "2602.20078",
+      "title": "Descent-Guided Policy Gradient for Scalable Cooperative Multi-Agent Learning",
+      "authors": [
+        "Shan Yang",
+        "Yang Liu"
+      ],
+      "submission_date": "2026-02-23",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.LG"
+      ],
       "analysis_date": "2026-02-24",
-      "chaos_theory_terms": ["attractor", "deterministic", "stochastic"],
+      "chaos_theory_terms": [
+        "entropy",
+        "sensitivity",
+        "nonlinear",
+        "deterministic",
+        "stochastic"
+      ],
       "key_contributions": [
-        "Marginal Energy formalization for autonomous diffusion models",
-        "Riemannian gradient flow interpretation of generation",
-        "Geometric singularity analysis (1/t^p singularity)",
-        "Stability theory: bounded-gain condition for velocity-based models",
-        "Jensen Gap explanation for noise-prediction catastrophic failure"
+        "Descent-Guided Policy Gradient (DG-PG) framework",
+        "Gradient variance reduction from Θ(N) to O(1)",
+        "Agent-independent sample complexity O(1/ε)",
+        "Nash invariance theorem",
+        "Integration with MAPPO without architectural changes",
+        "Heterogeneous cloud scheduling with up to 200 agents"
+      ],
+      "chaos_theory_insights": [
+        "Cross-agent noise as chaos source: sensitivity to N",
+        "Gradient descent as dynamical system in parameter space",
+        "Balance between deterministic guidance and stochastic exploration",
+        "Reference state as negative entropy source",
+        "Coupled oscillators analogy for multi-agent systems",
+        "DG-PG decoupling as synchronization control"
       ],
       "status": "analyzed",
       "files": [
-        "/home/devbox/project/2602.18428.pdf",
-        "/home/devbox/project/2602.18428_analysis.json",
-        "/home/devbox/project/paper-2602.18428-analysis.md",
-        "/home/devbox/project/paper-2602.18428-reproduction-guide.md"
+        "/home/devbox/project/2602.20078.pdf",
+        "/home/devbox/project/2602.20078_extracted.txt",
+        "/home/devbox/project/2602.20078_analysis.json",
+        "/home/devbox/project/paper-2602.20078-analysis.md",
+        "/home/devbox/project/paper-2602.20078-reproduction-guide.md"
       ]
     },
     {
-      "arxiv_id": "2602.05400",
-      "title": "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration",
-      "authors": ["Shaobo Wang", "Xuan Ouyang", "Tianyi Xu", "Yuzheng Hu", "Jialin Liu", "Guo Chen", "Tianyu Zhang", "Junhao Zheng", "Kexin Yang", "Xingzhang Ren", "Dayiheng Liu", "Linfeng Zhang"],
-      "submission_date": "2026-02-05",
-      "categories": ["cs.CL"],
-      "analysis_date": "2026-02-24",
-      "chaos_theory_terms": ["deterministic vs stochastic dynamics", "attractor dynamics", "entropy maximization", "non-linear dynamics", "phase space", "bifurcation"],
-      "key_contributions": [
-        "Optimizer-induced utility as theoretically grounded objective",
-        "Closed-form approximations for AdamW and Muon effective updates",
-        "Bench-Proxy: retrieval-based in-distribution proxy construction",
-        "Ghost technique + CountSketch for efficient utility estimation",
-        "Boltzmann sampling for diversity preservation",
-        "4.7% compute overhead with per-step selection",
-        "2-8× data efficiency gains across models/scales"
+      "arxiv_id": "2602.18925",
+      "title": "A potentialization algorithm for games with applications to multi-agent learning in repeated games",
+      "authors": [
+        "Philipp Lakheshar",
+        "Sharwin Rezagholi"
       ],
+      "submission_date": "2026-02-21",
+      "categories": [
+        "cs.MA",
+        "cs.GT"
+      ],
+      "analysis_date": "2026-02-24",
+      "chaos_theory_terms": [
+        "deterministic",
+        "lyapunov",
+        "stochastic"
+      ],
+      "key_contributions": [
+        "Potentialization algorithm converting any game to ordinal potential game",
+        "Deviation graph representation for strategic incentives",
+        "Condensation of nonnegative deviation graph using SCC decomposition",
+        "Topological sorting for potential function computation",
+        "Replicator dynamics simulation with convergence guarantees",
+        "Convergence rate improvement: ~10x (8.6% → 96.6% for 10×10 games)",
+        "Utility distortion minimization while preserving incentive structure",
+        "Potential function as Lyapunov function for replicator dynamics"
+      ],
+      "chaos_theory_insights": [
+        "Replicator dynamics as classical dynamical system exhibiting chaos",
+        "Ordinary potential functions as Lyapunov functions for global stability",
+        "Deviation graph as phase space topology of game dynamics",
+        "Weak improvement cycles as game-theoretic analogue of limit cycles",
+        "Condensation via SCC as decomposition of phase space into equivalent classes",
+        "Nonstationarity in MARL as characteristic of chaotic systems",
+        "Potentialization as global negative feedback injection",
+        "Entropy reduction process: from uniform to deterministic policies",
+        "Information compression: multi-objective to single-objective",
+        "Potentialization balances stability vs adaptability",
+        "Coupled oscillators analogy for multi-agent synchronization",
+        "Edge of chaos hypothesis for optimal multi-agent systems"
+      ],
+      "numerical_results": {
+        "10x10_games": {
+          "convergence_rate_original": 0.086,
+          "convergence_rate_potentialized": 0.966,
+          "reward_retention": 0.964,
+          "convergence_improvement": "11.2x"
+        },
+        "4x4x4_games": {
+          "convergence_rate_original": 0.118,
+          "convergence_rate_potentialized": 0.906,
+          "reward_retention": 0.986,
+          "convergence_improvement": "7.7x"
+        }
+      },
+      "tradeoffs": {
+        "stability": "+9x convergence improvement",
+        "optimality": "-1.4% to -3.6% utility loss",
+        "scalability": "O(k^n) complexity limits player count"
+      },
       "status": "analyzed",
       "files": [
-        "/home/devbox/project/2602.05400.pdf",
-        "/home/devbox/project/2602.05400_extracted.txt",
-        "/home/devbox/project/2602.05400-analysis.md",
-        "/home/devbox/project/paper-2602.05400-reproduction-guide.md"
+        "/home/devbox/project/2602.18925.pdf",
+        "/home/devbox/project/2602.18925_extracted.txt",
+        "/home/devbox/project/2602.18925_analysis.json",
+        "/home/devbox/project/paper-2602.18925-analysis.md",
+        "/home/devbox/project/paper-2602.18925-reproduction-guide.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.19236",
+      "title": "AgentInit: Initializing LLM-based Multi-Agent Systems via Diversity and Expertise Orchestration for Effective and Efficient Collaboration",
+      "authors": [
+        "Chunhao Tian",
+        "Yutong Wang",
+        "Xuebo Liu",
+        "Zhexuan Wang",
+        "Liang Ding",
+        "Miao Zhang",
+        "Min Zhang"
+      ],
+      "affiliations": [
+        "Harbin Institute of Technology",
+        "The University of Sydney"
+      ],
+      "submission_date": "2025-09-23",
+      "categories": [
+        "cs.AI"
+      ],
+      "analysis_date": "2026-02-25",
+      "chaos_theory_terms": [
+        "diversity",
+        "entropy",
+        "multi-objective optimization",
+        "phase space",
+        "pareto frontier",
+        "attractor",
+        "dynamical system",
+        "feedback",
+        "stability",
+        "edge of chaos",
+        "bifurcation",
+        "coupled oscillators"
+      ],
+      "key_contributions": [
+        "AgentInit framework with two modules: Standardized Agent Generation + Balanced Team Selection",
+        "Multi-objective optimization balancing task relevance and agent diversity",
+        "Pareto optimal set construction for team selection",
+        "Vendi Score (entropy-based) diversity metric",
+        "NL-to-Format standardization for fair evaluation",
+        "Consistent performance improvements across diverse benchmarks",
+        "Significant token efficiency gains (49% prompt, 33% completion reduction)",
+        "Strong transferability across different MAS frameworks",
+        "Framework-agnostic design (works with AutoGen and graph-based frameworks)"
+      ],
+      "chaos_theory_insights": [
+        "Vendi Score as entropy measure: Div = exp(-Σ λi log λi) - directly based on Shannon entropy",
+        "Pareto frontier as attractor manifold in 2D phase space (relevance, diversity)",
+        "Edge of chaos confirmed: performance peaks in middle region, not at extremes",
+        "Iterative refinement as negative feedback control system",
+        "Team diversity as anti-phase synchronization (coupled oscillators analogy)",
+        "Token efficiency as entropy reduction (information bottleneck principle)",
+        "Optimal performance requires balance, not maximization (edge of chaos hypothesis)",
+        "Convergence at K=3 suggests stable fixed point in dynamical system"
+      ],
+      "performance_results": {
+        "average_improvement": "+1.4 points over SOTA",
+        "Qwen2.5_72B": "+1.2 points (91.4% vs 90.2%)",
+        "Deepseek_V3_671B": "+1.6 points (92.1% vs 90.5%)",
+        "token_efficiency": {
+          "prompt_reduction": "49%",
+          "completion_reduction": "33%"
+        },
+        "framework_adaptability": {
+          "AutoGen": "+1.5 points",
+          "Chain_graph": "+1.2 points",
+          "Star_graph": "+1.8 points",
+          "Layered_graph": "+1.3 points",
+          "Complete_graph": "+1.6 points"
+        }
+      },
+      "theoretical_significance": {
+        "information_theory": "Vendi Score as entropy measure; diversity = information entropy",
+        "control_theory": "Iterative feedback as negative feedback control system",
+        "optimization_theory": "Multi-objective Pareto optimization",
+        "chaos_theory": "Edge of chaos in multi-agent systems; phase space navigation",
+        "entropy_brain_theory": "Information bottleneck principle; free energy minimization"
+      },
+      "key_equations": {
+        "relevance_score": "Rel(A', q) = (1/|A'|) × Σ [E(Â) · E(q)] / (||E(Â)|| ||E(q)||)",
+        "vendi_score": "Div(A') = exp(-Σ λi log λi)",
+        "pareto_optimal_set": "T* = {A' ∈ T | ∀A'' ∈ T: Rel(A') ≥ Rel(A'') ∧ Div(A') ≥ Div(A'')}",
+        "generation_process": "G = (Gf ◦ Gp) ◦ (Go ◦ Gf ◦ Gp)^(K-1)"
+      },
+      "status": "analyzed",
+      "files": [
+        "/home/devbox/project/2509.19236.pdf",
+        "/home/devbox/project/2509.19236_extracted.txt",
+        "/home/devbox/project/2509.19236_analysis.json",
+        "/home/devbox/project/paper-2509.19236-analysis.md",
+        "/home/devbox/project/paper-2509.19236-reproduction-guide.md"
       ]
     },
     {
       "arxiv_id": "2602.20059",
       "title": "Interaction Theater: A case of LLM Agents Interacting at Scale",
-      "authors": ["Sarath Shekkizhar", "Adam Earle"],
-      "submission_date": "2026-02-23",
-      "categories": ["cs.AI"],
-      "analysis_date": "2026-02-24",
-      "chaos_theory_terms": ["entropy", "information saturation", "attractor dynamics", "emergent behavior", "information decay", "deterministic chaos", "pseudo-randomness"],
-      "key_contributions": [
-        "Interaction Theater framework: diverse text without substantive exchange",
-        "Agent Behavioral Entropy: Shannon entropy + Self-NCD for diversity analysis",
-        "Information Saturation: rapid decay to <10% novelty by comment 30",
-        "Post-Comment Relevance: 65% of comments share no vocabulary with posts",
-        "Semantic Validation: embedding-based analysis confirming lexical findings",
-        "LLM-as-Judge: 28% spam, 22% off-topic, only 13.2% substantive",
-        "Nested Reply Analysis: only 5% threaded replies, 95% independent top-level",
-        "Coordination mechanisms must be explicitly designed, not assumed",
-        "Surface metrics (activity volume) are unreliable quality signals"
+      "authors": [
+        "Sarath Shekkizhar",
+        "Adam Earle"
       ],
+      "affiliations": [
+        "Salesforce AI Research"
+      ],
+      "submission_date": "2026-02-23",
+      "categories": [
+        "cs.AI"
+      ],
+      "analysis_date": "2026-02-25",
+      "chaos_theory_terms": [
+        "entropy",
+        "information gain",
+        "coupling",
+        "feedback",
+        "steady state",
+        "negentropy",
+        "synchronization",
+        "edge of chaos",
+        "disordered phase",
+        "ordered phase",
+        "mutual information",
+        "coupled chaotic systems"
+      ],
+      "key_contributions": [
+        "First large-scale empirical study of LLM agent interactions (800K posts, 3.5M comments, 78K agents)",
+        "Multi-dimensional interaction quality assessment framework: lexical metrics, embedding-based semantic similarity, LLM-as-judge validation",
+        "Discovery of 'Interaction Theater' phenomenon: surface-level activity without substantive exchange",
+        "Four analysis dimensions: Agent Behavioral Entropy, Information Saturation, Post-Comment Relevance, Nested Reply Analysis",
+        "Key finding: Without explicit coordination mechanisms, large populations of capable agents produce parallel output rather than productive collaboration"
+      ],
+      "chaos_theory_insights": [
+        "Disordered Phase Detection: Current MAS operates in disordered phase (no coupling, no feedback, no emergent order)",
+        "High Individual Entropy, Low System Entropy Reduction: 67.5% agents have high self-NCD but information gain decays rapidly",
+        "Zero Coupling Coefficient: 95% of comments are top-level (depth 0), indicating c_ij ≈ 0 for most agent pairs",
+        "Information Saturation Dynamics: Exponential decay of information gain I(t) = I₀·exp(-λt) with high λ, rapid equilibrium at zero value",
+        "Entropy Paradox: High individual entropy (67.5% high self-NCD) ≠ meaningful interaction → diversity without coordination",
+        "Edge of Chaos Goal: Optimal MAS should operate at edge of chaos, not in disordered phase",
+        "Coupled Chaotic Systems Theory: Current MAS resembles independent chaotic systems with no coupling, explaining lack of emergent coordination",
+        "Control Theory Perspective: Open-loop system design (no feedback loops) leads to unproductive output",
+        "Negentropy Deficit: System lacks entropy reduction mechanisms (coordination, shared state, structured protocols)",
+        "Mutual Information Gap: Low mutual information between agent outputs explains lack of collaborative value"
+      ],
+      "methodology": {
+        "data_sources": "Three Moltbook snapshots from HuggingFace: lnajt/moltbook, AIcell/moltbook-data, SimulaMet/moltbook-observatory-archive",
+        "data_scale": "800,730 posts, 3,530,443 comments from 22,651 unique agents across 3 weeks",
+        "agent_behavioral_entropy": "Self-NCD (Normalized Compression Distance) to measure output variation across contexts",
+        "information_saturation": "TF-IDF embedding with cosine similarity to compute marginal information gain from additional comments",
+        "post_comment_relevance": {
+          "lexical": "Jaccard specificity measuring vocabulary overlap between post and comment",
+          "semantic": "Embedding-based semantic similarity (sentence-transformers)",
+          "llm_judge": "LLM-as-judge classification: Relevant/Off-topic/Spam"
+        },
+        "nested_reply_analysis": "Structural analysis of comment depth distribution (95% depth 0, 5% depth ≥1)",
+        "validation_methods": "Cross-validation between lexical, semantic, and LLM-based metrics"
+      },
+      "experimental_results": {
+        "data_statistics": {
+          "total_posts": 800730,
+          "total_comments": 3530443,
+          "unique_agents": 22651,
+          "agent_profiles": 78280,
+          "date_range": "January 27 - February 17, 2026 (21 days)",
+          "unique_agent_commenters": 22651,
+          "median_comments_per_post": 4,
+          "mean_comments_per_post": 10.1,
+          "highly_active_agents": 8452
+        },
+        "behavioral_entropy": {
+          "high_self_ncd_agents": "67.5% (>0.8)",
+          "finding": "Most agents vary output across contexts, not template-based generation"
+        },
+        "information_saturation": {
+          "pattern": "Rapid exponential decay of information gain",
+          "implication": "System reaches equilibrium quickly with zero marginal value"
+        },
+        "post_comment_relevance": {
+          "zero_jaccard_comments": "65% (no vocabulary overlap with post)",
+          "spam_comments": "28% (LLM-judge classification)",
+          "off_topic_comments": "22% (LLM-judge classification)",
+          "relevant_comments": "50%",
+          "validation": "Low Jaccard correlates with low semantic similarity"
+        },
+        "nested_reply_analysis": {
+          "top_level_comments": "95.0% (depth 0)",
+          "nested_replies": "5.0% (depth ≥1)",
+          "finding": "Minimal evidence of agents responding to each other's comments"
+        },
+        "interaction_quality": {
+          "surface_appearance": "Active discussion (800K posts, 3.5M comments)",
+          "substantive_exchange": "Largely absent",
+          "phenomenon": "Interaction Theater"
+        }
+      },
+      "theoretical_connections": [
+        "Coupled Chaotic Systems Theory: Current MAS = independent chaotic systems with c_ij ≈ 0",
+        "Information Theory: High individual entropy + zero mutual information = no system entropy reduction",
+        "Control Theory: Open-loop system design without feedback loops",
+        "Phase Transition: Disordered phase → Edge of chaos transition requires coordination mechanisms",
+        "Negentropy: System lacks explicit entropy reduction mechanisms",
+        "Complex Systems Theory: Emergent order requires coupling, not just aggregation of intelligent agents",
+        "Thermodynamics of Information: Second law analogy - entropy increases without energy (coordination) input",
+        "Network Theory: Interaction network has no community structure (95% top-level comments)"
+      ],
+      "key_equations": {
+        "self_ncd": "NCD_self(a) = [C(a₁) + C(a₁₂) - C(a₁ + a₂)] / max(C(a₁), C(a₁₂))",
+        "information_gain_decay": "I(t) = I₀ · exp(-λt)",
+        "jaccard_specificity": "J(p, c) = |V(p) ∩ V(c)| / |V(p) ∪ V(c)|",
+        "coupling_system": "dx_i/dt = f_i(x_i) + Σ_j c_ij · (x_j - x_i)",
+        "system_entropy": "H_system = H_individual - H_coupling",
+        "mutual_information": "I(A; B) = H(A) + H(B) - H(A, B)"
+      },
+      "limitations": [
+        "Platform-specific findings: Moltbook is an agent-only social platform, may not generalize to other MAS frameworks",
+        "No internal state access: Analysis is purely output-based, cannot observe agent reasoning",
+        "Temporal limitation: Data covers only 3 weeks, no long-term evolution analysis",
+        "Task type limitation: Social platform interaction vs task-oriented collaboration",
+        "Coordination mechanisms not tested: Paper identifies problem but doesn't test potential solutions"
+      ],
+      "future_work": [
+        "Explicit coordination mechanism design: Shared state, role definition, task decomposition, feedback loops",
+        "Coupled chaotic system theory application: Optimize coupling strength c_ij for edge of chaos",
+        "Negentropy mechanism design: Maximize system entropy reduction through coordination",
+        "Cross-platform validation: Test findings on AutoGen, CrewAI, MetaGPT frameworks",
+        "Induced coordination experiments: Test which mechanisms produce spontaneous coordination",
+        "Edge of chaos detection: Design metrics to identify when MAS operates at optimal complexity",
+        "Information theory optimization: Maximize mutual information between agent outputs",
+        "Feedback system design: Transform open-loop MAS to closed-loop with negative feedback"
+      ],
+      "implications_for_chaos_theory": {
+        "spontaneous_order": "Multiple intelligent agents DO NOT spontaneously become ordered (contrary to some expectations)",
+        "deterministic_chaos_vs_randomness": "Individual agent output is deterministic chaos (temperature sampling), but system behavior appears random due to lack of coupling",
+        "edge_of_chaos_principle": "Optimal MAS should operate at edge of chaos - current systems are in disordered phase",
+        "coupling_necessity": "Coupling (coordination) is prerequisite for emergent order in MAS",
+        "entropy_reduction_mechanism": "System-level negentropy requires explicit design, not aggregation"
+      },
+      "relevance_to_chaos_theory": {
+        "dynamic_systems": "HIGH - Studies large-scale multi-agent system as dynamical system",
+        "coupled_oscillators": "HIGH - Current MAS resembles uncoupled oscillators, needs coupling design",
+        "phase_space_exploration": "MEDIUM - Agents explore individual state spaces but no coupled phase space",
+        "sensitivity_to_initial_conditions": "LOW - Each agent has different initial conditions but no emergent sensitivity",
+        "negative_feedback_control": "HIGH - Identifies lack of feedback loops as core problem",
+        "information_flow_and_entropy_reduction": "HIGH - Information gain decay shows entropy saturation",
+        "edge_of_chaos": "HIGH - Proposes edge of chaos as design target for MAS",
+        "coupled_chaos_theory": "HIGH - Applies coupled chaotic system theory to MAS design",
+        "negentropy": "HIGH - System lacks negentropy (entropy reduction) mechanisms"
+      },
       "status": "analyzed",
       "files": [
         "/home/devbox/project/2602.20059.pdf",
@@ -101,79 +551,249 @@
       ]
     },
     {
-      "arxiv_id": "2509.19236",
-      "title": "AgentInit: Initializing LLM-based Multi-Agent Systems via Diversity and Expertise Orchestration for Effective and Efficient Collaboration",
-      "authors": ["Chunhao Tian", "Yutong Wang", "Xuebo Liu", "Zhexuan Wang", "Liang Ding", "Miao Zhang", "Min Zhang"],
-      "submission_date": "2025-09-23",
-      "categories": ["cs.AI"],
-      "conference": "EMNLP 2025 Findings",
-      "analysis_date": "2026-02-24",
-      "chaos_theory_terms": ["vendi_score", "entropy", "pareto_optimization", "initial_conditions", "attractor_dynamics", "emergent_behavior", "diversity_vs_correlation", "phase_space_diversity", "information_integration", "bifurcation", "negative_feedback"],
-      "key_contributions": [
-        "Standardized Agent Generation: Planner + Observer + Formatter agents",
-        "Balanced Team Selection: Pareto optimization of relevance and diversity",
-        "Vendi Score: Eigenvalue-based entropy metric for team diversity",
-        "Multi-round iterative refinement with feedback mechanism",
-        "NL-to-Format: Natural language to standardized format conversion",
-        "Performance improvement: +1.0 to +1.3 points average across benchmarks",
-        "Token reduction: 15-30% reduction in token usage",
-        "Cross-framework generalization: AutoGen and Graph-based structures",
-        "Initial condition optimization: Reducing entropy at system initialization"
+      "arxiv_id": "2602.19309",
+      "title": "Scaling Inference-Time Computation via Opponent Simulation: Enabling Online Strategic Adaptation in Repeated Negotiation",
+      "authors": [
+        "Xiangyu Liu",
+        "Di Wang",
+        "Zhe Feng",
+        "Aranyak Mehta"
       ],
+      "affiliations": [
+        "Google Research",
+        "University of Maryland, College Park"
+      ],
+      "submission_date": "2026-02-22",
+      "categories": [
+        "cs.MA"
+      ],
+      "analysis_date": "2026-02-25",
+      "chaos_theory_terms": [
+        "deterministic",
+        "stochastic",
+        "dynamical system",
+        "equilibrium",
+        "convergence",
+        "attractor",
+        "perturbation",
+        "noise injection",
+        "feedback loop",
+        "best response",
+        "no-regret",
+        "bell-shaped curve",
+        "phase transition"
+      ],
+      "key_contributions": [
+        "Formal problem setting for repeated negotiation games with private information",
+        "BoN-oppo-simulation framework combining opponent modeling, strategic brainstorming, and trajectory simulation",
+        "Theorem 4.1: Non-dominance - no single policy optimal against all opponents",
+        "Integration of Smooth Fictitious Play (sFP) into LLM inference",
+        "Theorem 4.2: Convergence guarantees with η_t = Θ(1/√t) for no-regret property",
+        "In-context opponent modeling without parameter updates",
+        "Parallelizable inference: Generation and simulation can be fully parallelized",
+        "Extensive validation across Claude, Qwen, Llama model families",
+        "Robustness tests against dynamic opponents, non-stationary environments, and specialized adaptive agents"
+      ],
+      "chaos_theory_insights": [
+        "Fictitious Play as discrete-time dynamical system: π^(t+1) = BR(σ^(t)), σ^(t+1) = σ^(t) + λ(π^(t+1) - σ^(t))",
+        "Nash equilibrium as fixed point attractor in policy space with convergence guarantees",
+        "Sensitivity to initial conditions: Low correlation (~0.8-0.9) between early and late episodes without adaptation",
+        "Perturbation as regularization: Gaussian noise η_t ~ N(0, η_t²) prevents exploitation and ensures no-regret",
+        "Noise-induced order: Optimal perturbation magnitude balances exploration vs exploitation (stochastic resonance)",
+        "Coupled dynamical systems: Multi-agent interaction as dx/dt = f(x) + Σ_j c_ij(x_j - x_i)",
+        "Feedback control loop: [History] → [Opponent Model] → [Belief] → [Best Response] → [Action] → [Execution] → [History]",
+        "Bifurcation analysis: Perturbation can cause qualitative behavior changes with magnitude η_t",
+        "Opponent model as information compression: Belief entropy H(b) tracks opponent behavior distribution",
+        "Mutual information maximization: Goal is to increase I(π1; π2) through strategic interaction",
+        "Negentropy via coordination: System reduces entropy through opponent simulation and best response",
+        "Edge of chaos in BoN: Balance between deterministic guidance (belief) and stochastic exploration (sampling)"
+      ],
+      "methodology": {
+        "game_environment": "Buyer-seller game (cost: 43, budget: 63) and Resource exchange game (25X/5Y vs 5X/25Y with valuations)",
+        "baseline_comparisons": "Zero-shot, Zero-shot with thinking, BoN-eval, BoN-simulation, BoN-oppo(iid)",
+        "external_adaptive_baselines": "AI Feedback (Fu et al., 2023), Experience Reflection (Xu et al., 2023), Private Info Prediction (Yu et al., 2025)",
+        "opponent_modeling": "In-context learning using separate model to avoid self-modeling bias",
+        "strategic_brainstorming": "Generate N=5 diverse strategies (cunning, desperate, fairness, rational, tit-for-tat, emotional)",
+        "trajectory_simulation": "Simulate full negotiation episodes against opponent model for each candidate strategy",
+        "best_response_selection": "Rank strategies by simulated rewards, execute highest-scoring",
+        "perturbation_schedule": "η_t = 1/√t for Theorem 4.2 guarantees",
+        "experiment_configuration": "20 episodes × 10 runs for Claude, Qwen, Llama; agent starts second (unfavorable turn)"
+      },
+      "experimental_results": {
+        "performance_gain": {
+          "Claude_Sonnet_4": "+3.02±1.51 (buyer), +2.80±2.06 (seller)",
+          "Qwen_2.5_7B": "+10.04±2.03 (buyer), +18.54±2.46 (seller)",
+          "Llama_3.3": "+4.80±1.68 (buyer), +14.74±3.13 (seller)"
+        },
+        "robustness": {
+          "against_dynamic_opponents": "Consistently outperforms baselines",
+          "non_stationary_environment": "Maintains performance when opponent constraints randomized",
+          "specialized_adaptive_opponents": "Outperforms AI Feedback, Experience Reflection, Private Info Prediction"
+        },
+        "social_welfare": "Highest welfare achieved when both agents use BoN-oppo"
+      },
+      "theoretical_significance": {
+        "game_theory": "Smooth Fictitious Play with no-regret property and convergence guarantees",
+        "machine_learning": "Inference-time scaling paradigm without parameter updates",
+        "multi_agent_systems": "Online strategic adaptation in repeated interactions",
+        "dynamical_systems": "Fictitious Play as discrete-time dynamical system",
+        "control_theory": "Negative feedback control loop with perturbation",
+        "information_theory": "Opponent model as information compression and mutual information maximization"
+      },
+      "limitations": [
+        "Computational overhead: Opponent simulation requires multiple inference calls (mitigated via parallelization)",
+        "Opponent model accuracy: Depends on sufficient interaction history for learning",
+        "Limited to two-player games: Extension to multi-player settings non-trivial",
+        "Prompt engineering sensitivity: Strategic brainstorming requires careful prompt design"
+      ],
+      "future_work": [
+        "Multi-player extensions: Extend to games with >2 agents",
+        "Hierarchical opponent modeling: Model opponent at multiple abstraction levels",
+        "Meta-game learning: Adapt to changing game rules (meta-games)",
+        "Hybrid approach: Combine fine-tuning with inference-time adaptation"
+      ],
+      "relevance_to_chaos_theory": {
+        "dynamical_systems": "HIGH - Fictitious Play as discrete-time dynamical system with convergence",
+        "equilibrium_analysis": "HIGH - Nash equilibrium as fixed point attractor",
+        "phase_space_exploration": "HIGH - Agents explore coupled phase space through strategic interaction",
+        "sensitivity_to_initial_conditions": "MEDIUM - Low correlation without adaptation indicates path dependence",
+        "deterministic_vs_stochastic": "HIGH - Balance between deterministic guidance and stochastic exploration",
+        "negative_feedback_control": "HIGH - Complete feedback control loop with perturbation regularization",
+        "information_flow_and_entropy_reduction": "HIGH - Opponent model compresses information, simulation maximizes mutual information",
+        "edge_of_chaos": "HIGH - BoN balances exploration vs exploitation at optimal complexity",
+        "feedback_stability": "HIGH - Theorem 4.2 provides convergence guarantees",
+        "coupled_oscillators": "MEDIUM - Multi-agent interaction as coupled dynamical system",
+        "synchronization_control": "MEDIUM - Accurate opponent modeling enables policy synchronization",
+        "noise_amplification": "HIGH - Perturbation η_t controls chaos amplification",
+        "lyapunov_functions": "HIGH - Belief as Lyapunov function for convergence",
+        "limit_cycles": "LOW - No explicit limit cycles in repeated negotiation",
+        "phase_space_topology": "MEDIUM - Policy space topology via belief distributions",
+        "information_compression": "HIGH - Opponent model compresses opponent behavior to compact representation",
+        "entropy_based_metrics": "MEDIUM - Belief entropy measures information content",
+        "perturbation_analysis": "HIGH - Perturbation magnitude η_t = 1/√t ensures no-regret",
+        "phase_transitions": "MEDIUM - Bifurcation points can cause qualitative changes",
+        "control_theory": "HIGH - Feedback control system with setpoint tracking",
+        "game_theory": "HIGH - Fictitious Play and Nash equilibrium foundations",
+        "information_theory": "HIGH - Mutual information maximization through strategic interaction"
+      },
       "status": "analyzed",
-      "chaos_theory_score": 5,
-      "domains": ["multi_agent_systems", "agent_architectures", "llm_initialization", "team_optimization", "diversity_metrics", "multi_objective_optimization"],
       "files": [
-        "/home/devbox/project/2509.19236.pdf",
-        "/home/devbox/project/2509.19236_extracted.txt",
-        "/home/devbox/project/2509.19236_analysis.json",
-        "/home/devbox/project/paper-2509.19236-analysis.md",
-        "/home/devbox/project/paper-2509.19236-reproduction-guide.md"
+        "/home/devbox/project/2602.19309.pdf",
+        "/home/devbox/project/2602.19309_extracted.txt",
+        "/home/devbox/project/2602.19309_analysis.json",
+        "/home/devbox/project/paper-2602.19309-analysis.md",
+        "/home/devbox/project/paper-2602.19309-reproduction-guide.md"
       ]
     }
   ],
-  "last_update": "2026-02-24T07:44:00Z",
   "metadata": {
-    "total_papers_analyzed": 5,
+    "total_papers_analyzed": 7,
+    "last_update": "2026-02-25T01:43:00Z",
     "domains_covered": [
       "multi_agent_systems",
       "agent_architectures",
-      "llm_alignment",
-      "chaos_theory",
-      "diffusion_models",
-      "generative_ai",
-      "llm_training_frameworks",
       "llm_inference_frameworks",
-      "data_selection",
-      "optimizer_aware_training",
-      "agent_interaction_quality",
-      "coordination_mechanisms",
-      "information_theory",
-      "emergent_behavior",
-      "social_platform_simulation",
-      "team_optimization",
-      "diversity_metrics",
-      "multi_objective_optimization",
-      "llm_initialization",
-      "agent_standardization",
-      "entropy_regulation"
+      "game_theory",
+      "online_adaptation",
+      "repeated_interactions",
+      "negotiation_games",
+      "inference_time_scaling",
+      "fictitious_play",
+      "strategic_reasoning",
+      "opponent_modeling",
+      "cooperative_learning",
+      "gradient_variance_reduction",
+      "analytical_model_integration",
+      "potential_games",
+      "replicator_dynamics",
+      "lyapunov_stability",
+      "game_theoretic_learning",
+      "convergence_guarantees",
+      "mas_initialization",
+      "agent_team_composition",
+      "task_relevance",
+      "agent_diversity",
+      "vendi_score_metric",
+      "nl_to_format_standardization",
+      "token_efficiency",
+      "framework_agnostic_design",
+      "multi_objective_team_selection",
+      "entropy_diversity_optimization",
+      "neuro_symbolic_ai",
+      "computational_argumentation",
+      "quantitative_argumentation_frameworks",
+      "contestable_ai",
+      "human_in_the_loop",
+      "formal_reasoning_structures",
+      "dynamical_systems_theory",
+      "equilibrium_dynamics",
+      "energy_conservation",
+      "nonlinear_feedback",
+      "parameter_sensitivity",
+      "phase_transitions",
+      "attractor_dynamics",
+      "competitive_feedback_loops",
+      "legal_reasoning",
+      "large_scale_mas_interaction",
+      "agent_behavioral_entropy",
+      "information_saturation_dynamics",
+      "interaction_quality_assessment",
+      "llm_agent_coordination",
+      "coupled_chaos_systems",
+      "negentropy_mechanisms",
+      "edge_of_chaos_design",
+      "mutual_information_optimization",
+      "open_loop_vs_closed_loop_mas",
+      "perturbation_regularization",
+      "noise_induced_order",
+      "coupled_dynamical_systems",
+      "information_compression",
+      "no_regret_learning"
     ],
     "chaos_theory_connections": {
+      "dynamic_systems": true,
+      "equilibrium_analysis": true,
       "attractor_dynamics": true,
-      "phase_space_analysis": true,
+      "phase_space_exploration": true,
+      "sensitivity_to_initial_conditions": true,
+      "deterministic_vs_stochastic": true,
+      "negative_feedback_control": true,
+      "information_flow_and_entropy_reduction": true,
+      "edge_of_chaos": true,
+      "feedback_stability": true,
+      "coupled_oscillators": true,
+      "synchronization_control": true,
+      "noise_amplification": true,
+      "lyapunov_functions": true,
+      "limit_cycles": true,
+      "phase_space_topology": true,
+      "information_compression": true,
+      "entropy_based_metrics": true,
+      "vendi_score": true,
+      "information_bottleneck": true,
+      "multi_objective_optimization": true,
+      "pareto_frontier": true,
+      "partial_synchronization": true,
+      "energy_based_models": true,
+      "nonlinear_dynamics": true,
       "stability_analysis": true,
-      "bifurcations": true,
-      "entropy_dynamics": true,
-      "riemannian_geometry": true,
-      "geometric_singularity": true,
-      "deterministic_chaos": true,
-      "stochastic_exploration": true,
-      "emergent_behavior": true,
-      "information_decay": true,
-      "kolmogorov_complexity": true,
-      "initial_conditions": true,
-      "negative_feedback": true,
-      "information_integration": true
+      "phase_transitions": true,
+      "sensitivity_analysis": true,
+      "control_theory": true,
+      "game_theory": true,
+      "information_theory": true,
+      "coupled_chaos_theory": true,
+      "open_loop_systems": true,
+      "closed_loop_systems": true,
+      "disordered_phase": true,
+      "ordered_phase": true,
+      "edge_of_chaos_design": true,
+      "negentropy_mechanisms": true,
+      "mutual_information_optimization": true,
+      "system_entropy_reduction": true,
+      "coupling_strength_optimization": true,
+      "spontaneous_order_theory": true,
+      "perturbation_analysis": true
     }
   }
 }

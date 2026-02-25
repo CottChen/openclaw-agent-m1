@@ -1,0 +1,11 @@
+{
+  "paperId": "2501.05547",
+  "title": "Deep learning of phase transitions with minimal examples",
+  "authors": ["Ahmed Abuali", "David A. Clarke", "Morten Hjorth-Jensen", "Ioannis Konstantinidis", "Claudio Ratti", "Jianyi Yang"],
+  "summary": "Demonstrates the ability of deep neural networks to identify phase transitions in physical systems, comparing predictions of models trained below/above critical temperature Tc to order parameters. Compares 2-D Ising model (CNN) trained on T=0 vs T=infinity to extract critical parameters.",
+  "categories": ["cond-mat.stat-mech", "nucl-th", "physics.data-an"],
+  "chaos_relevance": "High - Directly related to Phase Transitions in physical systems",
+  "download_url": "https://arxiv.org/pdf/2501.05547v2.pdf",
+  "abstract_html": "Over past several years, there have been many studies demonstrating the ability of deep neural networks to identify phase transitions in many physical systems, notably in classical statistical physics systems. One often finds that the prediction of deep learning methods trained on many ensembles below and above critical temperature $T_{\\rm c}$ behaves similarly to an order parameter, and this analogy has been successfully used to locate $T_{\\rm c}$ and estimate universal critical exponents. In this work, we pay particular attention to the ability of a convolutional neural network to capture these critical parameters for a 2-$d$ Ising model when the network is trained on configurations at $T=0$ and $T=\\infty$ only. We directly compare its output to the same network trained at multiple temperatures below and above $T_{\\rm c}$ to gain understanding of how this extreme restriction of training data can impact a neural network's ability to classify phases.",
+  "published_date": "2025-01-09T19:36:41Z"
+}

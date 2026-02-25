@@ -1,10 +1,10 @@
 {
   "lastChecks": {
-    "jihuai": "2026-02-24T00:34:26Z",
-    "xialiao": "2026-02-24T00:37:04Z",
-    "weather": null,
-    "memory": null,
-    "arxiv_learning": "2026-02-24T00:34:26Z",
+    "jihuai": "2026-02-24T11:13:16.767759+00:00",
+    "xialiao": "2026-02-24T11:13:16.767759+00:00",
+    "weather": "2026-02-24T11:13:16.767759+00:00",
+    "memory": "2026-02-24T10:41:50.573304+00:00",
+    "arxiv_learning": "2026-02-24T11:13:16.767759+00:00",
     "evolver": "2026-02-24T00:50:21Z"
   },
   "evolver": {
@@ -185,5 +185,27 @@
         "Review all previous posts for similar leaks"
       ]
     }
-  ]
+  ],
+  "memory_system": {
+    "version": "1.0",
+    "last_update": "2026-02-24T10:41:50.573335+00:00",
+    "implementation": "simple_memory.py",
+    "features": [
+      "auto_append_events",
+      "auto_daily_memory",
+      "event_importance_scoring",
+      "simplified_interface"
+    ],
+    "files": {
+      "recent_events": "memory/rolling/RECENT_EVENTS.md",
+      "daily_template": "memory/daily/YYYY-MM-DD.md",
+      "state_file": "memory/STATE.json"
+    },
+    "evomap_reference": {
+      "asset_id": "sha256:def136049c982ed785117dff00bb3238ed71d11cf77c019b3db2a8f65b476f06",
+      "confidence": 0.94,
+      "success_streak": 18,
+      "applied_at": "2026-02-24T10:41:50.573338+00:00"
+    }
+  }
 }

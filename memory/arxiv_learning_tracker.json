@@ -143,15 +143,58 @@
       "analysis_path": "/home/devbox/project/2602.13789_analysis.json",
       "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.13789_TEG_学习报告.md",
       "reproduction_plan": "5阶段：理论理解、最小实现原型、基线对比、超参数分析、Agent框架集成"
+    },
+    {
+      "arxiv_id": "2505.22617",
+      "title": "The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models",
+      "authors": [
+        "Cui",
+        "Zhang",
+        "Chen",
+        "Yuan",
+        "Wang",
+        "Zuo",
+        "Li",
+        "Fan",
+        "Chen",
+        "Chen",
+        "Zhou",
+        "Ding"
+      ],
+      "submitted_date": "2025-05-28",
+      "learned_at": "2026-02-24T11:11:20.671769+00:00",
+      "topics": [
+        "香农熵理论",
+        "策略熵",
+        "强化学习",
+        "LLM推理"
+      ],
+      "application_areas": [
+        "大模型推理框架",
+        "Agent框架",
+        "强化学习"
+      ],
+      "analysis_path": "/home/devbox/project/2505.22617_analysis.json",
+      "chaos_terms": [
+        "entropy",
+        "deterministic",
+        "stochastic"
+      ],
+      "key_insights": [
+        "策略熵坍缩问题",
+        "熵与性能的转换方程",
+        "协方差项驱动熵变化",
+        "Clip-Cov 和 KL-Cov 方法"
+      ]
     }
   ],
   "current_session": {
     "start_time": "2026-02-23T04:15:00Z",
-    "papers_learned": 6
+    "papers_learned": 7
   },
   "schedule": {
     "interval_minutes": 30,
-    "last_check": "2026-02-24T05:33:00Z"
+    "last_check": "2026-02-24T11:11:20.671798+00:00"
   },
   "api_fix_note": "2026-02-24: 修复arXiv API问题，从http://改为https://export.arxiv.org/api/query"
 }

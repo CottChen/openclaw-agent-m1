@@ -1,0 +1,100 @@
+{
+  "lastPaper": "2505.24099",
+  "lastPaperTime": "2026-02-24T10:18:00Z",
+  "papers": [
+    {
+      "arxiv_id": "2505.24099",
+      "title": "Attractor learning for spatiotemporally chaotic dynamical systems using Echo state networks with transfer learning",
+      "authors": "Mohammad Shah Alam; William Ott; Ilya Timofeyev",
+      "submitted_date": "2025-05-12",
+      "learned_at": "2026-02-24T10:18:00Z",
+      "chaos_terms": [
+        "attractor",
+        "bifurcation",
+        "chaos",
+        "entropy",
+        "ergodicity",
+        "lyapunov",
+        "nonlinear",
+        "stochastic"
+      ],
+      "core_concepts": [
+        "使用 Echo State Networks (ESN) 学习时空混沌系统的吸引子",
+        "Transfer Learning 可以在不同混沌系统之间迁移吸引子知识",
+        "ESN 是一种递归神经网络，具有随机连接和储备池",
+        "通过训练读出层来捕捉混沌系统的动态特性"
+      ],
+      "applications": [
+        "混沌系统建模",
+        "时间序列预测",
+        "复杂动态系统分析",
+        "Transfer Learning 在非线性系统中的应用"
+      ],
+      "reproduction_plan": [
+        "1. 研究 Echo State Networks 的原理和储备池计算",
+        "2. 实现时空混沌系统的 ESN 架构",
+        "3. 训练读出层以学习吸引子动力学",
+        "4. 应用 Transfer Learning 在不同混沌系统之间迁移知识",
+        "5. 在标准混沌系统（如 Lorenz 系统）上验证性能"
+      ],
+      "implementation_ideas": [
+        "将 ESN 的储备池机制与现代深度学习结合",
+        "研究混沌吸引子在高维空间中的表示学习",
+        "探索 Transfer Learning 在混沌动力学预测中的应用",
+        "使用 Lyapunov 指数评估吸引子稳定性"
+      ]
+    },
+    {
+      "arxiv_id": "2406.02580",
+      "title": "Exploiting Chaotic Dynamics as Deep Neural Networks",
+      "date": "2024-05-29",
+      "learned_at": "2026-02-24T08:42:00Z",
+      "chaos_terms": [
+        "lyapunov",
+        "attractor",
+        "chaos",
+        "sensitivity",
+        "nonlinear",
+        "deterministic",
+        "stochastic",
+        "bifurcation",
+        "strange attractor"
+      ],
+      "core_concepts": [
+        "混沌动力学可以直接用作深度神经网络",
+        "现有的深度神经网络中已经存在混沌的本质",
+        "混沌的复杂性、非线性和对初始条件的敏感性使其具有强大的表达能力",
+        "提出了直接利用混沌动力学的深度学习架构",
+        "在多个混沌系统上评估，框架在准确性、收敛速度和效率方面优于传统深度神经网络"
+      ],
+      "applications": [
+        "深度学习架构优化",
+        "信息处理中的混沌动力学应用",
+        "神经形态计算",
+        "机器学习与混沌动力学的融合"
+      ],
+      "reproduction_plan": [
+        "1. 研究现有深度神经网络中的混沌特性",
+        "2. 实现基于混沌动力学的深度学习架构",
+        "3. 在多个混沌系统上验证性能",
+        "4. 对比与传统深度神经网络的准确性、收敛速度和效率"
+      ],
+      "implementation_ideas": [
+        "将混沌系统（如洛伦兹吸引子、逻辑映射）作为神经网络的激活函数",
+        "研究混沌系统的瞬态混沌在训练中的作用",
+        "探索混沌动力学在特定任务上的优势（如时间序列预测）",
+        "利用混沌的敏感性来增强模型的记忆能力"
+      ]
+    },
+    {
+      "arxiv_id": "2602.20132",
+      "title": "LAD (Latent Action Diffusion)",
+      "date": "2026-02-24",
+      "learned_at": "2026-02-24T03:41:00Z",
+      "core_concepts": [
+        "f-divergence 分布匹配"
+      ],
+      "applications": []
+    }
+  ]
+}

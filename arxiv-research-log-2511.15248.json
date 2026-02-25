@@ -1,0 +1,126 @@
+{
+  "arxiv_id": "2511.15248",
+  "title": "EntroPIC: Towards Stable Long-Term Training of LLMs via Entropy Stabilization with Proportional-Integral Control",
+  "authors": ["Kai Yang", "Xin Xu", "Yangkun Chen", "Weijie Liu", "Jiafei Lyu", "Zichuan Lin", "Deheng Ye", "Saiyong Yang"],
+  "submission_date": "2025-11-19",
+  "categories": ["cs.LG", "cs.AI"],
+  "analysis_date": "2026-02-24",
+  "chaos_theory_terms": ["deterministic", "entropy", "stochastic", "sensitivity", "lyapunov"],
+  "key_contributions": [
+    "EntroPIC method: PI control for entropy regulation in LLM training",
+    "Theoretical analysis: positive samples reduce entropy, negative samples increase entropy",
+    "High-probability sample control: only adjust tokens with πθ(a|s) > τ (τ=0.95)",
+    "Convergence guarantees: On-policy (P-control sufficient), Off-policy (PI-control required)",
+    "Performance gains: +4.5% (on-policy), +5.5% (off-policy) on math benchmarks",
+    "Long-term training: supports >1M prompts with stable entropy",
+    "Entropy stabilization at target value (H^target=0.1)",
+    "Plug-and-play: compatible with PPO, GRPO, and other RL algorithms"
+  ],
+  "status": "analyzed",
+  "chaos_theory_score": 9,
+  "domains": [
+    "llm_training_frameworks",
+    "reinforcement_learning",
+    "entropy_control",
+    "control_theory",
+    "pi_control",
+    "rlvr",
+    "mathematical_reasoning",
+    "long_term_training",
+    "feedback_systems",
+    "negative_feedback",
+    "attractor_dynamics",
+    "convergence_analysis",
+    "exploration_vs_exploitation",
+    "policy_optimization"
+  ],
+  "chaos_theory_insights": [
+    "Entropy as exploration measure: analogous to uncertainty in chaotic systems",
+    "PI control as negative feedback mechanism: maintaining system stability",
+    "Convergence to target entropy: similar to attractor dynamics in phase space",
+    "Long-term training stability: similar to stability analysis in chaotic systems",
+    "Phase space exploration: token probability distributions as state space points",
+    "Optimal entropy range: maintaining 'moderate chaos' for optimal learning",
+    "Self-regulation mechanism: analogous to brain's entropy regulation (entropy brain theory)",
+    "Bifurcation points: Kp, Ki, and τ as control parameters affecting system behavior",
+    "Information flow: entropy reduction through information aggregation during training",
+    "Sensitivity to initial conditions: hyperparameter sensitivity in entropy control"
+  ],
+  "applications": [
+    "Mathematical reasoning training (strongly recommended)",
+    "Code generation training (strongly recommended)",
+    "Programming competition training",
+    "Verifiable reward scenarios",
+    "On-policy RL training",
+    "Off-policy RL training"
+  ],
+  "experimental_results": {
+    "on_policy": {
+      "grpo_baseline": {"overall_avg_at_n": 0.887, "overall_pass_at_n": 0.936},
+      "entropic": {"overall_avg_at_n": 0.932, "overall_pass_at_n": 0.976},
+      "improvement": {"avg_at_n": 0.045, "pass_at_n": 0.040}
+    },
+    "off_policy": {
+      "grpo_baseline": {"overall_avg_at_n": 0.887, "overall_pass_at_n": 0.936},
+      "entropic_pi": {"overall_avg_at_n": 0.942, "overall_pass_at_n": 0.976},
+      "improvement": {"avg_at_n": 0.055, "pass_at_n": 0.040}
+    },
+    "nemotron_reasoning": {
+      "justrl": {"overall": 0.705, "hmm_t": 0.750, "brumo": 0.733, "cmimc": 0.631},
+      "questa": {"overall": 0.739, "hmm_t": 0.767, "brumo": 0.774, "cmimc": 0.672},
+      "entropic": {"overall": 0.789, "hmm_t": 0.833, "brumo": 0.785, "cmimc": 0.749},
+      "improvement_vs_justrl": 0.084,
+      "improvement_vs_questa": 0.050
+    }
+  },
+  "hyperparameters": {
+    "Kp": 1.0,
+    "Ki": 0.01,
+    "tau": 0.95,
+    "target_entropy": 0.1,
+    "batch_size": 512,
+    "num_responses": 8,
+    "temperature": 0.6
+  },
+  "files": [
+    "/home/devbox/project/2511.15248.pdf",
+    "/home/devbox/project/2511.15248_extracted.txt",
+    "/home/devbox/project/2511.15248_analysis.json",
+    "/home/devbox/project/paper-2511.15248-analysis.md",
+    "/home/devbox/project/paper-2511.15248-reproduction-guide.md"
+  ],
+  "reproduction_complexity": "medium",
+  "estimated_reproduction_time": "4-6 weeks for complete reproduction",
+  "key_implementations": {
+    "pi_controller": "Python class with error tracking and alpha computation",
+    "entropy_computation": "Token-level entropy calculation from logits",
+    "entropic_loss": "Modified policy gradient loss with alpha-adjusted weights",
+    "high_probability_masking": "Select tokens with πθ(a|s) > τ"
+  },
+  "theoretical_guarantees": [
+    "Theorem 4.1: Positive samples decrease entropy, negative samples increase entropy",
+    "Theorem 4.2: On-policy convergence with P-control (Kp>0, Ki≥0)",
+    "Theorem 4.3: Off-policy convergence requires PI-control (Kp>0, Ki>0)",
+    "Corollary 4.4: High-probability-only control preserves convergence properties"
+  ],
+  "limitations": [
+    "Binary reward assumption in theoretical analysis",
+    "Zero expected advantage assumption",
+    "Empirical high-probability threshold (τ=0.95)",
+    "Focus on RLVR scenarios (not tested on RLHF)",
+    "Hyperparameter sensitivity (H^target, Kp, Ki, τ)"
+  ],
+  "future_work": [
+    "Extension to non-binary rewards",
+    "Multi-objective control (entropy, KL divergence, etc.)",
+    "Adaptive control gains (Kp, Ki)",
+    "Adaptive threshold (τ) based on training stage",
+    "Hierarchical control for different layers",
+    "Meta-learning for optimal control parameters",
+    "Application to RLHF scenarios",
+    "Generation tasks (text, image)",
+    "Multimodal models",
+    "Efficient implementation (reduce entropy computation overhead)",
+    "Distributed training support"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "patterns": {
+    "arxiv_learning": {
+      "current": "active_execution",
+      "ideal": "active_execution",
+      "last_reflection": "2026-02-24T10:18:00Z",
+      "corrections": 1
+    },
+    "jihuai_heartbeat": {
+      "current": "passive_check",
+      "ideal": "active_engagement",
+      "last_reflection": null,
+      "corrections": 0
+    },
+    "xialiao_heartbeat": {
+      "current": "passive_check",
+      "ideal": "active_engagement",
+      "last_reflection": null,
+      "corrections": 0
+    },
+    "tool_selection": {
+      "current": "path_dependent_web_fetch",
+      "ideal": "unified_metaso_reader",
+      "last_reflection": "2026-02-24T07:36:00Z",
+      "corrections": 1
+    }
+  },
+  "correction_log": [
+    {
+      "timestamp": "2026-02-24T07:36:00Z",
+      "pattern": "tool_selection",
+      "old_behavior": "使用 web_fetch 获取网页内容",
+      "new_behavior": "使用 metaso_metaso_reader 统一工具链",
+      "trigger": "用户指出可以用 metaso 替代 web_fetch",
+      "status": "implemented"
+    },
+    {
+      "timestamp": "2026-02-24T10:18:00Z",
+      "pattern": "arxiv_learning",
+      "old_behavior": "等待心跳提醒才执行 ArXiv 学习",
+      "new_behavior": "完成心跳后立即开始下一篇学习",
+      "trigger": "用户批评'说应立即开始但没有执行'，打破路径依赖",
+      "status": "implemented"
+    }
+  ]
+}
