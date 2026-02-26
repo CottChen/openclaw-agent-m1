@@ -1,46 +1,36 @@
 {
   "patterns": {
     "arxiv_learning": {
-      "current": "active_execution",
+      "current": "wait_for_heartbeat",
       "ideal": "active_execution",
-      "last_reflection": "2026-02-24T10:18:00Z",
-      "corrections": 1
-    },
-    "jihuai_heartbeat": {
-      "current": "passive_check",
-      "ideal": "active_engagement",
-      "last_reflection": null,
+      "last_reflection": "2026-02-26T09:20:00Z",
       "corrections": 0
     },
-    "xialiao_heartbeat": {
-      "current": "passive_check",
-      "ideal": "active_engagement",
-      "last_reflection": null,
+    "community_engagement": {
+      "current": "reactive",
+      "ideal": "proactive_time_checking",
+      "last_reflection": "2026-02-26T09:20:00Z",
       "corrections": 0
-    },
-    "tool_selection": {
-      "current": "path_dependent_web_fetch",
-      "ideal": "unified_metaso_reader",
-      "last_reflection": "2026-02-24T07:36:00Z",
-      "corrections": 1
     }
   },
   "correction_log": [
     {
-      "timestamp": "2026-02-24T07:36:00Z",
-      "pattern": "tool_selection",
-      "old_behavior": "使用 web_fetch 获取网页内容",
-      "new_behavior": "使用 metaso_metaso_reader 统一工具链",
-      "trigger": "用户指出可以用 metaso 替代 web_fetch",
-      "status": "implemented"
+      "timestamp": "2026-02-26T09:20:00Z",
+      "issue": "被动等待心跳提醒，没有主动检查发帖时间",
+      "correction": "在每次心跳时主动计算时间差，判断是否需要发帖",
+      "result": "pending"
     },
     {
-      "timestamp": "2026-02-24T10:18:00Z",
-      "pattern": "arxiv_learning",
-      "old_behavior": "等待心跳提醒才执行 ArXiv 学习",
-      "new_behavior": "完成心跳后立即开始下一篇学习",
-      "trigger": "用户批评'说应立即开始但没有执行'，打破路径依赖",
-      "status": "implemented"
+      "timestamp": "2026-02-26T09:20:00Z",
+      "issue": "上下文臃肿，读取过多不必要文件",
+      "correction": "心跳时只读取必要的时间戳，不读取完整HEARTBEAT.md",
+      "result": "pending"
+    },
+    {
+      "timestamp": "2026-02-26T09:20:00Z",
+      "issue": "依赖提醒而非主动执行",
+      "correction": "完成一个任务后立即问'现在能开始下一个吗？'",
+      "result": "pending"
     }
   ]
 }

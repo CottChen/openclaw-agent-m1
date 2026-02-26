@@ -13,6 +13,284 @@
   ],
   "learned_papers": [
     {
+      "arxiv_id": "2602.18292",
+      "title": "Decoding as Optimisation on the Probability Simplex: From Top-K to Top-P (Nucleus) to Best-of-K Samplers",
+      "authors": "Xiaotong Ji, Rasul Tutunov, Matthieu Zimmer, Haitham Bou-Ammar",
+      "submitted_date": "2026-02-20",
+      "learned_at": "2026-02-26T09:30:00Z",
+      "topics": [
+        "解码优化论",
+        "概率单纯形优化",
+        "镜像上升法",
+        "覆盖率效用",
+        "Best-of-K解码器",
+        "正则化理论",
+        "Bregman散度",
+        "KL散度锚定"
+      ],
+      "application_areas": [
+        "大模型训练框架",
+        "大模型推理框架",
+        "Agent框架",
+        "多样本管道",
+        "自一致性",
+        "重排序",
+        "验证器选择"
+      ],
+      "analysis_path": "/home/devbox/project/2602.18292_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.18292_解码优化论_覆盖率_Best_of_K_学习报告.md",
+      "chaos_terms": [
+        "temperature (λ^{-1} as chaos parameter)",
+        "entropy (Shannon entropy as regularization)",
+        "Lyapunov exponent (initial condition sensitivity)",
+        "phase space (probability simplex)",
+        "attractor (greedy vertex, softmax interior, sparsemax boundary)",
+        "edge of chaos (optimal temperature balance)",
+        "sensitivity (small τ changes → large output differences)",
+        "marginal returns (coverage utility diminishing)"
+      ],
+      "key_insights": [
+        "解码是优化问题，不是启发式：所有解码方法都是主问题的特例",
+        "香农熵作为自然正则化：Softmax解码是负熵正则化的唯一最优解",
+        "覆盖率对抗模式坍缩：多样本场景下激励探索未覆盖的高价值token",
+        "KL散度提供鲁棒性锚定：防止解码分布过度偏离模型分布",
+        "边缘混沌是最优解码状态：中等温度在确定性与随机性间找到最佳平衡",
+        "镜像上升是概率单纯形的原生求解器：使用KL散度而非L2距离",
+        "多样本最优不等价于单样本最优：BoK实现从个体优化到集体优化的转换"
+      ],
+      "reproduction_plan": "5阶段：理论理解与基础实现、镜像上升法实现、Sparsemax和BoK解码器、基准测试与评估、应用到Agent框架"
+    },
+    {
+      "arxiv_id": "2602.18095",
+      "title": "Neurosymbolic Language Reasoning as Satisfiability Modulo Theory",
+      "authors": "Hyunseok Oh, Sam Stern, Youngki Lee, Matthai Philipose",
+      "submitted_date": "2026-02-20",
+      "learned_at": "2026-02-26T09:07:48.652523",
+      "topics": [
+        "神经符号推理",
+        "SMT理论",
+        "自然语言文本约束（NLTCs）",
+        "反馈控制系统",
+        "约束满足问题",
+        "组合推理",
+        "信息瓶颈",
+        "部分形式化"
+      ],
+      "application_areas": [
+        "大模型推理框架",
+        "Agent框架",
+        "约束满足系统",
+        "内容审核",
+        "法律推理"
+      ],
+      "analysis_path": "/home/devbox/project/2602.18095_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.18095_神经符号推理_SMT理论_学习报告.md",
+      "chaos_terms": [
+        "deterministic (SMT求解器)",
+        "stochastic (LLM推理)",
+        "feedback (propose-verify-refine循环)",
+        "sensitivity (组合推理中的参数敏感性)",
+        "attractor (约束满足的稳定解)",
+        "bifurcation (不同模型的行为差异)"
+      ],
+      "key_insights": [
+        "NLTCs作为信息压缩机制：约束越多，系统熵越低",
+        "迭代求解（propose-verify-refine）是反馈控制系统：负反馈调节确保系统收敛到稳定状态",
+        "部分形式化策略：在完全有序（纯逻辑）和完全无序（纯文本）之间寻找边缘平衡",
+        "组合推理中的敏感性：微小初始条件差异导致巨大输出差异（混沌特征）",
+        "SMT求解器提供确定性边界，LLM提供随机性探索，两者结合实现边缘混沌态",
+        "缓存机制降低计算复杂度：减少重复计算，控制信息熵",
+        "约束满足问题（CSP）在相空间中寻找稳定吸引子：求解过程是轨迹收敛过程"
+      ],
+      "reproduction_plan": "5阶段：理论理解（SMT基础+NLTC形式化+算法分析）、最小实现原型（Logitext解析器+NLSolver+check()）、基准测试（组合缺口验证+缓存效果评估）、应用到Agent系统（MAS集成+边缘混沌态优化）、优化与扩展（性能优化+跨领域应用+理论扩展）"
+    },
+    {
+      "arxiv_id": "2602.22198",
+      "title": "Thermal activation drives a finite-size crossover from scale-free to runaway avalanches in amorphous solids",
+      "authors": "Gieberth Rodriguez-Lopez; Ezequiel E. Ferrero",
+      "submitted_date": "2026-02-25",
+      "learned_at": "2026-02-26T04:02:55.974787+00:00",
+      "topics": [
+        "热激活雪崩",
+        "弹塑性模型",
+        "无外力驱动",
+        "有限尺寸效应",
+        "自组织临界性"
+      ],
+      "application_areas": [
+        "多智能体系统",
+        "复杂系统稳定性",
+        "随机扰动分析",
+        "Agent框架设计"
+      ],
+      "analysis_path": "/home/devbox/project/2602.22198_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.22198_热激活无标度到雪崩_学习报告.md",
+      "chaos_terms": [
+        "deterministic",
+        "stochastic",
+        "fractal"
+      ],
+      "key_insights": [
+        "热激活产生内在不稳定性尺度",
+        "有限尺寸控制的临界温度 Tc(L)",
+        "从无标度到失控雪崩的相变",
+        "四点敏感性 χ4 量化时空重排相关性",
+        "系统尺寸决定稳定性边界",
+        "热力学极限下微扰破坏有序态"
+      ],
+      "reproduction_plan": "5阶段：理论理解、最小实现原型、基准测试、应用到Agent系统、优化与扩展"
+    },
+    {
+      "arxiv_id": "2602.22038",
+      "title": "Quantitative propagation of chaos for 2D stochastic vortex model on the whole space under moderate interactions",
+      "authors": "Alexandre B. de Souza",
+      "submitted_date": "2026-02-24",
+      "learned_at": "2026-02-26T03:02:02.801587+00:00",
+      "topics": [
+        "混沌传播",
+        "随机涡旋模型",
+        "2D系统",
+        "适度相互作用"
+      ],
+      "application_areas": [
+        "混沌理论",
+        "随机过程",
+        "流体动力学",
+        "多体系统"
+      ],
+      "analysis_path": "/home/devbox/project/2602.22038_analysis.json",
+      "chaos_terms": [
+        "chaos",
+        "deterministic",
+        "entropy",
+        "nonlinear",
+        "stochastic"
+      ],
+      "key_insights": [
+        "2D随机涡旋模型中的混沌定量传播",
+        "适度相互作用下的混沌行为",
+        "全空间上的随机动力学",
+        "非线性随机系统的混沌特性"
+      ]
+    },
+    {
+      "arxiv_id": "2602.19586",
+      "title": "From Quantum Chaos to a Reversed Quantum Disentangled Liquid in a Disorder-Free Spin Ladder",
+      "authors": "Hanieh Najafzadeh; Abdollah Langari",
+      "submitted_date": "2026-02-24",
+      "learned_at": "2026-02-26T00:38:05.273815+00:00",
+      "topics": [
+        "量子混沌",
+        "量子退纠缠",
+        "自旋梯模型",
+        "无序系统"
+      ],
+      "application_areas": [
+        "量子计算",
+        "凝聚态物理",
+        "多体系统",
+        "复杂系统研究"
+      ],
+      "analysis_path": "/home/devbox/project/2602.19586_analysis.json",
+      "chaos_terms": [
+        "entropy",
+        "ergodicity",
+        "chaos",
+        "sensitivity",
+        "phase space"
+      ],
+      "key_insights": [
+        "量子混沌到量子退纠缠液体的相变过程",
+        "无序自旋梯系统中的复杂动力学",
+        "相空间敏感性在量子系统中的表现"
+      ]
+    },
+    {
+      "arxiv_id": "2209.05829",
+      "title": "Statistical models of complex brain networks: a maximum entropy approach",
+      "authors": "未显示（需要进一步查找）",
+      "submitted_date": "2022-09-13",
+      "learned_at": "2026-02-26T07:12:00Z",
+      "topics": [
+        "最大熵方法",
+        "指数随机图模型",
+        "局部连接机制",
+        "网络科学",
+        "神经科学"
+      ],
+      "application_areas": [
+        "网络科学",
+        "神经科学",
+        "生物学",
+        "复杂系统研究",
+        "大模型训练框架",
+        "大模型推理框架",
+        "Agent框架"
+      ],
+      "analysis_path": "/home/devbox/project/2209.05829_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2209.05829_复杂大脑网络统计模型_学习报告.md",
+      "chaos_terms": [
+        "entropy",
+        "stochastic",
+        "sensitivity"
+      ],
+      "key_insights": [
+        "最大熵原理作为分析复杂网络的核心方法",
+        "ERGMs作为分析复杂大脑的简约方法",
+        "局部连接机制从观测到的全局结构推断未观测的生成规则",
+        "大脑网络的内在变异性是分析的根本挑战",
+        "熵作为系统复杂度的度量，是连接复杂度、信息论、神经科学的共同语言"
+      ]
+    },
+    {
+      "arxiv_id": "2602.21149",
+      "title": "Geometry- and inertia-limited chaotic growth in classical many-body systems",
+      "authors": "Swetamber Das",
+      "submitted_date": "2026-02-24",
+      "learned_at": "2026-02-25T15:03:06.028772+00:00",
+      "deep_study_at": "2026-02-26T00:52:00Z",
+      "deep_study_notes": "已生成深入学习报告，分析了策略熵坍缩问题、熵与性能转换方程、Clip-Cov和KL-Cov两种方法，从混沌理论视角将策略熵视为Lyapunov指数的逆，边缘混沌态是最优平衡点",
+      "topics": [
+        "Lyapunov指数",
+        "混沌边界",
+        "Hamiltonian系统",
+        "集体模式",
+        "几何约束",
+        "惯性约束"
+      ],
+      "application_areas": [
+        "大模型训练框架",
+        "大模型推理框架",
+        "Agent框架",
+        "多智能体系统"
+      ],
+      "analysis_path": "/home/devbox/project/2602.21149_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.21149_几何与惯性限制的混沌增长_学习报告.md",
+      "chaos_terms": [
+        "lyapunov",
+        "entropy",
+        "attractor",
+        "ergodicity",
+        "chaos",
+        "sensitivity",
+        "nonlinear",
+        "phase space",
+        "deterministic",
+        "strange attractor"
+      ],
+      "key_insights": [
+        "Lyapunov指数的上界由惯性和相互作用的几何结构决定",
+        "不可违反边界：λmax ≤ 1/(2m) + 2J，保守约束",
+        "遍历天花板：λmax ≲ (1/2m)[1 - 4π²J/N²·I₁(βJ)/I₀(βJ)]，更紧致的约束",
+        "集体模式抑制混沌增长：长波长激发起关键作用",
+        "热力学极限下：遍历天花板趋近于惯性天花板，独立于温度和相互作用强度",
+        "存在动态不可达区域：混沌增长受几何和惯性限制",
+        "从微观时间尺度角度：存在最小时间尺度限制长期记忆丢失"
+      ],
+      "reproduction_plan": "5阶段：理解Hamiltonian稳定性理论、实现耦合转子链、验证边界（数值）、扩展到多智能体系统、优化与应用",
+      "deep_study_report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2505.22617_熵机制深度学习_学习报告.md"
+    },
+    {
       "arxiv_id": "2602.17832",
       "title": "MePoly: Max Entropy Polynomial Policy Optimization",
       "learned_at": "2026-02-23T04:30:00Z",
@@ -186,15 +464,171 @@
         "协方差项驱动熵变化",
         "Clip-Cov 和 KL-Cov 方法"
       ]
+    },
+    {
+      "arxiv_id": "2505.14569",
+      "title": "Agent Context Protocols Enhance Collective Inference",
+      "authors": "Devansh Bhardwaj; Arjun Beniwal; Shreyas Chaudhari; Ashwin Kalyan; Tanmay Rajpurohit; Karthik R. Narasimhan; Ameet Deshpande; Vishvak Murahari",
+      "submitted_date": "2025-05-20",
+      "learned_at": "2026-02-25T04:43:43.170365+00:00",
+      "topics": [
+        "集体推断",
+        "多智能体协调",
+        "结构化通信",
+        "容错机制",
+        "标准化协议"
+      ],
+      "application_areas": [
+        "Agent框架",
+        "多智能体系统",
+        "分布式系统"
+      ],
+      "analysis_path": "/home/devbox/project/2505.14569_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2505.14569_ACPs_学习报告.md",
+      "chaos_terms": [
+        "entropy",
+        "stochastic"
+      ],
+      "key_insights": [
+        "自发秩序需要结构化协议",
+        "集体推断是MAS的未来",
+        "持久执行蓝图+标准化消息=容错协调",
+        "ACPs实现了被授权的自主性",
+        "从混沌系统到有序系统：依赖图增加耦合"
+      ],
+      "reproduction_plan": "5阶段：理解ACPs架构、最小实现原型、基准测试、集成到OpenClaw、优化与扩展"
+    },
+    {
+      "arxiv_id": "2503.14956",
+      "title": "Interpretable predictions of chaotic dynamical systems using dynamical system deep learning",
+      "authors": "(元数据未完整显示)",
+      "submitted_date": "2025-03-19",
+      "learned_at": "2026-02-25T05:43:32.173971+00:00",
+      "topics": [
+        "可解释性",
+        "混沌动力学",
+        "深度学习",
+        "Lyapunov指数",
+        "吸引子学习"
+      ],
+      "application_areas": [
+        "时间序列预测",
+        "混沌系统控制",
+        "多智能体系统分析"
+      ],
+      "analysis_path": "/home/devbox/project/2503.14956_analysis.json",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2503.14956_可解释混沌预测_学习报告.md",
+      "chaos_terms": [
+        "attractor",
+        "chaos",
+        "deterministic",
+        "entropy",
+        "fractal",
+        "nonlinear",
+        "sensitivity",
+        "stochastic",
+        "strange attractor"
+      ],
+      "key_insights": [
+        "混沌不等于不可解释，动力学约束让深度学习模型可解释",
+        "可解释性是谱系：预测准确率 vs 解释简单度的权衡",
+        "奇异吸引子结构可通过深度学习学习",
+        "Lyapunov指数量化初始条件敏感性",
+        "从预测到控制的桥梁：可解释的动力学模型让控制变得可行"
+      ],
+      "reproduction_plan": "5阶段：理论理解、最小实现原型、基准测试、应用到MAS、优化与扩展"
+    },
+    {
+      "arxiv_id": "j.aas.c240451",
+      "title": "Adaptive fuzzy output-feedback consensus tracking control for multi-agent systems with actuator faults",
+      "authors": "Zhang L, Che W, Shi P, Lim C",
+      "submitted_date": "2022-09",
+      "learned_at": "2026-02-25T10:39:00Z",
+      "topics": [
+        "多智能体系统",
+        "模糊控制",
+        "故障容错",
+        "共识控制",
+        "输出反馈控制",
+        "Lyapunov稳定性"
+      ],
+      "application_areas": [
+        "无人机编队",
+        "机器人集群",
+        "智能电网",
+        "自动驾驶车队"
+      ],
+      "analysis_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.240451_故障容错模糊控制_学习报告.md",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2602.240451_故障容错模糊控制_学习报告.md",
+      "chaos_terms": [
+        "fuzzy",
+        "consensus",
+        "feedback",
+        "faults",
+        "Lyapunov",
+        "bifurcation",
+        "actuator"
+      ],
+      "key_insights": [
+        "故障是外部扰动，系统应在故障时维持吸引子稳定状态",
+        "模糊控制处理系统模型的不确定性，是确定性与混沌之间的桥梁",
+        "共识是相空间中的聚拢过程，故障会导致相空间轨迹偏离",
+        "输出反馈是负反馈调节，在系统失稳前进行干预",
+        "边缘混沌是最优耦合状态：系统在灵活性与稳定性间平衡"
+      ],
+      "reproduction_plan": "4阶段：理论理解、最小实现原型、基准测试、应用扩展（无人机/机器人/电网仿真）"
+    },
+    {
+      "arxiv_id": "2026.02.chaos_sync_collection",
+      "title": "多智能体混沌系统同步与反馈控制（论文合集）",
+      "authors": "Zhang L, Che W, Shi P, Lim C, Wang Y, Zhao G, Chen J, Rahnama A, Antsaklis P, Liu A, Saberi A, Stoorvogel D, Nojavanzadeh S, Wei Q, Wang X, Zhong X, Wu N",
+      "submitted_date": "2020-2012 (多篇论文综述)",
+      "learned_at": "2026-02-25T11:09:00Z",
+      "topics": [
+        "混沌同步",
+        "多智能体系统",
+        "滑模控制",
+        "事件触发控制",
+        "故障估计",
+        "有限时间控制"
+      ],
+      "application_areas": [
+        "无人机编队",
+        "机器人集群",
+        "智能电网",
+        "自动驾驶车队"
+      ],
+      "analysis_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2026.02_chaos同步_多智能体_学习报告.md",
+      "report_path": "/home/devbox/.openclaw/workspace/memory/arxiv_learning/2026.02_chaos同步_多智能体_学习报告.md",
+      "chaos_terms": [
+        "synchronization",
+        "consensus",
+        "sliding mode",
+        "feedback",
+        "faults",
+        "Lyapunov",
+        "bifurcation",
+        "actuator",
+        "event-triggered",
+        "finite-time"
+      ],
+      "key_insights": [
+        "同步是相空间中的\"聚拢\"过程：智能体状态在相空间中聚集到低维流形",
+        "事件触发控制是\"信息压缩\"技术：只在状态误差超过阈值时传输信息",
+        "滑模控制提供\"鲁棒性增强\"：在参数变化和外部扰动下维持系统稳定",
+        "故障估计是\"负反馈调节\"机制：估计故障并调整控制律维持系统稳定",
+        "多智能体系统的三种状态：无序态（零耦合）、边缘混沌（最优耦合）、有序态（强耦合）"
+      ],
+      "reproduction_plan": "4阶段：理论理解（混沌同步理论）、最小实现原型（多智能体仿真）、基准测试（性能对比）、应用扩展（无人机/机器人/电网）"
     }
   ],
   "current_session": {
     "start_time": "2026-02-23T04:15:00Z",
-    "papers_learned": 7
+    "papers_learned": 14
   },
   "schedule": {
     "interval_minutes": 30,
-    "last_check": "2026-02-24T11:11:20.671798+00:00"
+    "last_check": "2026-02-26T09:07:48.652545"
   },
   "api_fix_note": "2026-02-24: 修复arXiv API问题，从http://改为https://export.arxiv.org/api/query"
 }

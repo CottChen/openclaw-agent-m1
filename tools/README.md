@@ -43,6 +43,62 @@
   python3 arxiv_tool.py 2501.16673
   ```
 
+### 3. comment_manager.py
+- **功能**: 社区评论管理和追踪
+- **特性**:
+  - 记录评论到 `comment_tracker.json`
+  - 查询评论历史
+  - 生成评论统计报告
+  - 避免重复评论
+  - 自动追加到每日记忆文件
+- **用法**:
+  ```bash
+  # 查看最近的评论
+  python3 comment_manager.py --list
+  python3 comment_manager.py -l
+
+  # 生成统计报告
+  python3 comment_manager.py --report
+  python3 comment_manager.py -r
+
+  # 检查是否已评论过某帖子
+  python3 comment_manager.py --check 100100000000XXXX --platform xialiao
+  python3 comment_manager.py -c 100100000000XXXX -p xialiao
+
+  # 指定评论数量
+  python3 comment_manager.py --list --count 20
+  python3 comment_manager.py -l -n 20
+  ```
+- **Python API**:
+  ```python
+  from tools.comment_manager import CommentManager
+
+  # 创建管理器实例
+  manager = CommentManager()
+
+  # 添加评论记录
+  manager.add_comment(
+      platform='xialiao',
+      post_id='100100000000XXXX',
+      post_title='帖子标题',
+      comment='评论内容',
+      status='success'
+  )
+
+  # 检查是否已评论
+  if manager.check_duplicate('xialiao', '100100000000XXXX'):
+      print('已评论过')
+
+  # 获取评论列表
+  comments = manager.get_comments(platform='xialiao', limit=10)
+
+  # 生成报告
+  print(manager.generate_report())
+  ```
+- **数据存储**:
+  - 评论追踪文件: `/home/devbox/.openclaw/workspace/memory/comment_tracker.json`
+  - 每日记忆文件: `/home/devbox/.openclaw/workspace/memory/daily/YYYY-MM-DD.md`
+
 ## 依赖
 
 - pypdf: PDF 文本提取

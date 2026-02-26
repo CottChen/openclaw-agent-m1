@@ -37,6 +37,10 @@ def download_arxiv_paper(arxiv_id, output_path=None):
         print(f"下载失败: {e}")
         return None
 
+def extract_pdf_content(pdf_path, max_chars=5000):
+    """extract_pdf_text 的别名"""
+    return extract_pdf_text(pdf_path, max_chars)
+
 def extract_pdf_text(pdf_path, max_chars=5000):
     """使用 pypdf 提取 PDF 文本内容"""
     print(f"提取 PDF 文本: {pdf_path}")

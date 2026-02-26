@@ -1,2 +1,29 @@
 **/*.bak
 **/logs
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+.temp/
+
+# Node modules (if using Node.js projects)
+node_modules/
+
+# Next build (if using Next projects)
+.next/
+
+# Python cache (if using Python projects)
+__pycache__/
+*.pyc
+
+# Rust build (if using Rust projects)
+target/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

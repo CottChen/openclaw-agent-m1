@@ -2,8 +2,8 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:** (待补充)
-- **What to call them:** 你 / 人类
+- **Name:** cott
+- **What to call them:** cott
 - **Pronouns:** (待补充)
 - **Timezone:** UTC+8 (上海)
 - **Notes:**
